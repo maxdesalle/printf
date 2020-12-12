@@ -6,7 +6,7 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 08:51:16 by mdesalle          #+#    #+#             */
-/*   Updated: 2020/12/12 06:45:55 by mdesalle         ###   ########.fr       */
+/*   Updated: 2020/12/12 07:24:05 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,37 +31,39 @@ static int	ft_precision(char *str)
 
 static int	ft_width(char *str, t_list *box)
 {
-	if (*str >= '0' && *str <= '9')
+	while (*str != '\0')
 	{
-		box->width = ft_atoi(str);
-		return (0);
+
+		if (*str >= '0' && *str <= '9')
+		{
+			box->width = ft_atoi_alpha(str);
+			return (0);
+		}
+		str++;
 	}
 	return (-1);
 }
 
 static void	ft_flag(char *str, t_list *box)
 {
-	int	i;
-
-	i = 0;
 	box->ftag = 0;
 	box->fzero = 0;
 	box->fplus = 0;
 	box->fminus = 0;
 	box->fspace = 0;
-	while (str[i] != '\0')
+	while (*str != '\0')
 	{
-		if (str[i] == '#')
+		if (*str == '#')
 			box->ftag += 1;
-		else if (str[i] == '0')
+		else if (*str == '0')
 			box->fzero += 1;
-		else if (str[i] == '+')
+		else if (*str == '+')
 			box->fplus += 1;
-		else if (str[i] == '-')
+		else if (*str == '-')
 			box->fminus += 1;
-		else if (str[i] == ' ')
+		else if (*str == ' ')
 			box->fspace += 1;
-		i++;
+		str++;
 	}
 	return ;
 }
