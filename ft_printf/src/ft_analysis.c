@@ -6,7 +6,7 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 08:51:16 by mdesalle          #+#    #+#             */
-/*   Updated: 2020/12/12 07:24:05 by mdesalle         ###   ########.fr       */
+/*   Updated: 2020/12/12 07:34:35 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,18 +33,17 @@ static int	ft_width(char *str, t_list *box)
 {
 	while (*str != '\0')
 	{
-
 		if (*str >= '0' && *str <= '9')
 		{
 			box->width = ft_atoi_alpha(str);
-			return (0);
+			return (1);
 		}
 		str++;
 	}
-	return (-1);
+	return (0);
 }
 
-static void	ft_flag(char *str, t_list *box)
+static int	ft_flag(char *str, t_list *box)
 {
 	box->ftag = 0;
 	box->fzero = 0;
@@ -65,7 +64,7 @@ static void	ft_flag(char *str, t_list *box)
 			box->fspace += 1;
 		str++;
 	}
-	return ;
+	return (0);
 }
 
 void		ft_analysis(char *str, t_list *box)
