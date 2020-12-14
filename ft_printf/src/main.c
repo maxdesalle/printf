@@ -6,7 +6,7 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/10 10:33:39 by mdesalle          #+#    #+#             */
-/*   Updated: 2020/12/14 11:38:23 by mdesalle         ###   ########.fr       */
+/*   Updated: 2020/12/14 14:04:28 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,6 @@ int	main(void)
 	ft_printf("Ceci est un test: %s\n", "et ceci en est un autre");
 	ft_printf("Maintenant, nous allons introduire la largeur du côté gauche: %5s\n", "width");
 	ft_printf("Puis nous allons introduire la largeur du côté droit: %-5s\n", "width");
+	ft_printf("Et maintenant la %.6s\n", "précision");
 	return (0);
 }

@@ -6,45 +6,43 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 08:51:16 by mdesalle          #+#    #+#             */
-/*   Updated: 2020/12/14 09:53:33 by mdesalle         ###   ########.fr       */
+/*   Updated: 2020/12/14 14:05:31 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/printf.h"
 
-static int	ft_precision(char *str)
+static void	ft_precision(char *str, t_list *box)
 {
-	int	i;
-	int	precision;
-
-	i = 0;
-	precision = 0;
-	if (str[i] == '.')
+	box->precision = 0;
+	while (*str != '\0')
 	{
-		i++;
-		while (str[i] >= '0' && str[i] <= '9')
-			precision = precision * 10 + (str[i++] - '0');
-		return (precision);
+		if (*str == '.')
+		{
+			box->precision = ft_atoi_alpha(++str);
+			return ;
+		}
+		str++;
 	}
-	return (-1);
+	return ;
 }
 
-static int	ft_width(char *str, t_list *box)
+static void	ft_width(char *str, t_list *box)
 {
-	while (*str != '\0')
+	box->width = 0;
+	while (*str != '\0' && *str != '.')
 	{
 		if (*str >= '0' && *str <= '9')
 		{
 			box->width = ft_atoi_alpha(str);
-			return (1);
+			return ;
 		}
 		str++;
 	}
-	box->width = 1;
-	return (0);
+	return ;
 }
 
-static int	ft_flag(char *str, t_list *box)
+static void	ft_flag(char *str, t_list *box)
 {
 	box->ftag = 0;
 	box->fzero = 0;
@@ -65,12 +63,12 @@ static int	ft_flag(char *str, t_list *box)
 			box->fspace += 1;
 		str++;
 	}
-	return (0);
+	return ;
 }
 
 void		ft_analysis(char *str, t_list *box)
 {
-	box->precision = ft_precision(str);
+	ft_precision(str, box);
 	ft_width(str, box);
 	ft_flag(str, box);
 }
