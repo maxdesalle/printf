@@ -6,7 +6,7 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 09:02:17 by mdesalle          #+#    #+#             */
-/*   Updated: 2020/12/12 10:18:21 by mdesalle         ###   ########.fr       */
+/*   Updated: 2020/12/14 11:23:59 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,6 @@ typedef struct	s_list
 	int				fplus;
 	int				ftag;
 	int				len;
-	int				di;
-	int				c;
 	char			type;
 	char			*s;
 	void			*p;
@@ -42,6 +40,8 @@ void			ft_putchar(char c, t_list *box);
 void			ft_super_putchar(int len, char c, t_list *box);
 void			ft_analysis(char *str, t_list *box);
 void			ft_c_craft(char c, t_list *box);
+void			ft_putstr(char *str, t_list *box);
+void			ft_s_craft(char *str, t_list *box);
 long			ft_atoi_alpha(const char *nptr);
 
 #endif
