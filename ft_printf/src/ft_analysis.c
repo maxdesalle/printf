@@ -6,7 +6,7 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 08:51:16 by mdesalle          #+#    #+#             */
-/*   Updated: 2020/12/12 07:34:35 by mdesalle         ###   ########.fr       */
+/*   Updated: 2020/12/14 09:53:33 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ static int	ft_width(char *str, t_list *box)
 		}
 		str++;
 	}
+	box->width = 1;
 	return (0);
 }
 
