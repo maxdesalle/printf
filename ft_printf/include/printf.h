@@ -6,7 +6,7 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 09:02:17 by mdesalle          #+#    #+#             */
-/*   Updated: 2020/12/15 11:10:55 by mdesalle         ###   ########.fr       */
+/*   Updated: 2020/12/15 13:12:59 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,6 @@ void			ft_di_craft(int nbr, t_list *box);
 long			ft_atoi_alpha(const char *nptr);
 void			ft_putnbr(int n, t_list *box);
 size_t			ft_intlen(long x);
+size_t			ft_strlen(const char *s);
 
 #endif
