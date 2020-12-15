@@ -6,7 +6,7 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/10 10:33:39 by mdesalle          #+#    #+#             */
-/*   Updated: 2020/12/15 13:22:32 by mdesalle         ###   ########.fr       */
+/*   Updated: 2020/12/15 13:34:04 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,8 @@ void	ft_s_test(void)
 {
 	ft_printf("%s", "string\n");
 	ft_printf("%s", "------------------------------------------------------------------------------------------\n");
-	ft_printf("%5.3s\n", "test");
+	ft_printf("%5.7s\n", "test");
+	ft_printf("%8.2s\n", "test");
 	ft_printf("Ceci est un test: %s\n", "et ceci en est un autre");
 	ft_printf("Maintenant, nous allons introduire la largeur du côté gauche: %9s\n", "width");
 	ft_printf("Puis nous allons introduire la largeur du côté droit: %-10s\n", "width");

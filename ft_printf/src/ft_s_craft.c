@@ -6,7 +6,7 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/07 08:11:17 by mdesalle          #+#    #+#             */
-/*   Updated: 2020/12/15 13:25:23 by mdesalle         ###   ########.fr       */
+/*   Updated: 2020/12/15 14:31:57 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,13 @@ static void	ft_print_string_two(char *str, t_list *box)
 	if (box->fminus == 1)
 	{
 		ft_putstr_precision(str, box);
-		ft_super_putchar(box->width - ft_strlen(str) + 1, ' ', box);
+		ft_super_putchar(box->width - box->precision, ' ', box);
 		return ;
 	}
 	else if (box->fzero == 1)
-		ft_super_putchar(box->width - ft_strlen(str) + 1, '0', box);
+		ft_super_putchar(box->width - box->precision, '0', box);
 	else if (box->fminus == 0)
-		ft_super_putchar(box->width - ft_strlen(str) + 1, ' ', box);
+		ft_super_putchar(box->width - box->precision, ' ', box);
 	ft_putstr_precision(str, box);
 	return ;
 }
