@@ -6,7 +6,7 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/10 10:33:39 by mdesalle          #+#    #+#             */
-/*   Updated: 2020/12/15 13:34:04 by mdesalle         ###   ########.fr       */
+/*   Updated: 2020/12/16 11:44:11 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,14 @@ void	ft_s_test(void)
 {
 	ft_printf("%s", "string\n");
 	ft_printf("%s", "------------------------------------------------------------------------------------------\n");
-	ft_printf("%5.7s\n", "test");
-	ft_printf("%8.2s\n", "test");
+	ft_printf("%-5.7s\n", "test");
+	ft_printf("%-8.7s\n", "test");
+	ft_printf("%-8.2s\n", "test");
+	ft_printf("%-5.2s\n", "test");
+	ft_printf("%-6.3s\n", "test");
+	ft_printf("%.3s\n", "test");
 	ft_printf("Ceci est un test: %s\n", "et ceci en est un autre");
-	ft_printf("Maintenant, nous allons introduire la largeur du côté gauche: %9s\n", "width");
+	ft_printf("Maintenant, nous allons introduire la largeur du côté gauche:%9s\n", "width");
 	ft_printf("Puis nous allons introduire la largeur du côté droit: %-10s\n", "width");
 	ft_printf("Et maintenant la %.6s\n", "précision");
 	ft_printf("\n");
@@ -48,7 +52,6 @@ void	ft_di_test(void)
 	ft_printf("%-7.5d\n", 25);
 	ft_printf("%7d\n", 25);
 	ft_printf("%-7d", 25);
-	ft_printf("test");
 }
 
 int	main(void)

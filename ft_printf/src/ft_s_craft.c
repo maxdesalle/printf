@@ -6,7 +6,7 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/07 08:11:17 by mdesalle          #+#    #+#             */
-/*   Updated: 2020/12/15 14:31:57 by mdesalle         ###   ########.fr       */
+/*   Updated: 2020/12/16 11:34:39 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,49 +17,59 @@ static void	ft_print_string_one(char *str, t_list *box)
 	if (box->fminus == 1)
 	{
 		ft_putstr(str, box);
-		ft_super_putchar(box->width - ft_strlen(str) + 1, ' ', box);
+		ft_super_putchar(box->width - ft_strlen(str), ' ', box);
 		return ;
 	}
-	else if (box->fzero == 1)
-		ft_super_putchar(box->width - ft_strlen(str) + 1, '0', box);
 	else if (box->fminus == 0)
-		ft_super_putchar(box->width - ft_strlen(str) + 1, ' ', box);
+		ft_super_putchar(box->width - ft_strlen(str), ' ', box);
 	ft_putstr(str, box);
 	return ;
 }
 
 static void	ft_print_string_two(char *str, t_list *box)
 {
-	if (box->fminus == 1)
+	if (box->width > box->precision && box->precision <= ft_strlen(str))
 	{
+		ft_super_putchar(box->width - box->precision, ' ', box);
 		ft_putstr_precision(str, box);
-		ft_super_putchar(box->width - box->precision, ' ', box);
-		return ;
 	}
-	else if (box->fzero == 1)
-		ft_super_putchar(box->width - box->precision, '0', box);
-	else if (box->fminus == 0)
-		ft_super_putchar(box->width - box->precision, ' ', box);
-	ft_putstr_precision(str, box);
+	else if (box->width < box->precision && box->precision <= ft_strlen(str))
+		ft_putstr_precision(str, box);
+	else if (box->precision > ft_strlen(str))
+	{
+		ft_super_putchar(box->width - ft_strlen(str), ' ', box);
+		ft_putstr(str, box);
+	}
 	return ;
 }
 
 static void	ft_print_string_three(char *str, t_list *box)
 {
-	if (box->fzero == 1)
-		ft_super_putchar(box->width - ft_strlen(str) + 1, '0', box);
-	ft_putstr_precision(str, box);
-	return ;
+        if (box->width > box->precision && box->precision <= ft_strlen(str))
+        {
+                ft_putstr_precision(str, box);
+		ft_super_putchar(box->width - box->precision, ' ', box);
+        }
+	else if (box->width < box->precision && box->precision <= ft_strlen(str))
+                ft_putstr_precision(str, box);
+        else if (box->precision > ft_strlen(str))
+        {
+                ft_putstr(str, box);
+		ft_super_putchar(box->width - ft_strlen(str), ' ', box);
+        }
+        return ;
 }
 
 void	ft_s_craft(char *str, t_list *box)
 {
 	if (box->width > 1 && box->precision < 1)
 		ft_print_string_one(str, box);
-	else if (box->width > 1 && box->precision >= 1)
+	else if (box->width > 1 && box->precision >= 0 && box->fminus == 0)
 		ft_print_string_two(str, box);
-	else if (box->width < 1 && box->precision >= 1)
+	else if (box->width > 1 && box->precision >= 0 && box->fminus == 1)
 		ft_print_string_three(str, box);
+	else if (box->width < 1 && box->precision >= 0)
+		ft_putstr_precision(str, box);
 	else
 		ft_putstr(str, box);
 }
