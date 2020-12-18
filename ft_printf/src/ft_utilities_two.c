@@ -6,7 +6,7 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/15 11:04:09 by mdesalle          #+#    #+#             */
-/*   Updated: 2020/12/18 10:42:46 by mdesalle         ###   ########.fr       */
+/*   Updated: 2020/12/18 11:14:41 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,19 @@ size_t	ft_strlen(const char *s)
 size_t	ft_uintlen(unsigned int nbr)
 {
 	int	len;
+	unsigned long	tmp;
 
+	len = 0;
+	tmp = nbr;
+	if (tmp == 0)
+		return (++len);
+	else if (tmp < 0)
+		tmp *= -1;
+	while (tmp)
+	{
+		tmp /= 10;
+		len++;
+	}
 	return (len);
 }
 

@@ -6,7 +6,7 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/10 10:33:39 by mdesalle          #+#    #+#             */
-/*   Updated: 2020/12/18 10:52:46 by mdesalle         ###   ########.fr       */
+/*   Updated: 2020/12/18 14:52:41 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ void	ft_di_test(void)
 	ft_printf("%s", "int\n");
 	ft_printf("%s", "------------------------------------------------------------------------------------------\n");
 	ft_printf("%d\n", 25);
+	ft_printf("%5.1d\n", 25);
 	ft_printf("%.5d\n", 25);
 	ft_printf("%2.5d\n", 25);
 	ft_printf("%7.5d\n", 25);
@@ -59,5 +60,17 @@ int	main(void)
 	ft_c_test();
 	ft_s_test();
 	ft_di_test();
+	ft_printf("-----\n");
+	ft_printf("%u\n", 25);
+	ft_printf("%u\n", -25);
+	ft_printf("%5u\n", 25);
+	ft_printf("%5.1u\n", 25);
+	ft_printf("%5.4u\n", 25);
+	ft_printf("%5.6u\n", 25);
+	ft_printf("%-5u\n", 25);
+	ft_printf("%-5.1u\n", 25);
+	ft_printf("%-5.4u\n", 25);
+	ft_printf("%-5.6u\n", 25);
+	ft_printf("%1.1u\n", 25);
 	return (0);
 }

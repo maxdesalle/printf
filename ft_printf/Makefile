@@ -6,7 +6,7 @@
 #    By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/04 16:09:49 by mdesalle          #+#    #+#              #
-#    Updated: 2020/12/16 16:45:18 by mdesalle         ###   ########.fr        #
+#    Updated: 2020/12/18 11:37:44 by mdesalle         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,7 @@ SRC = src/ft_c_craft.c \
       src/ft_printf.c \
       src/ft_utilities_one.c \
       src/ft_utilities_two.c \
+      src/ft_utilities_three.c \
       src/ft_s_craft.c \
       src/ft_di_craft.c \
       src/ft_u_craft.c
