@@ -6,23 +6,11 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 11:24:47 by mdesalle          #+#    #+#             */
-/*   Updated: 2020/12/16 16:44:57 by mdesalle         ###   ########.fr       */
+/*   Updated: 2020/12/18 10:57:34 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/printf.h"
-
-static int	ft_type_check(char c)
-{
-	return (c == 'c' ||
-		c == 's' ||
-		c == 'p' ||
-		c == 'd' ||
-		c == 'i' ||
-		c == 'u' ||
-		c == 'x' ||
-		c == 'X');
-}
 
 static void	ft_craft1(va_list argptr, t_list *box)
 {
@@ -72,9 +60,9 @@ int			ft_parser(va_list argptr, char *str, t_list *box)
 		if (str[i] == '%' && str[i + 1] != '%')
 		{
 			ft_analysis(&str[++i], box);
-			while (ft_type_check(str[i]) == 0)
+			while (ft_strchr("cspdiuxX", str[i]) == NULL)
 				i++;
-			if (ft_type_check(str[i]) == 1)
+			if (ft_strchr("cspdiuxX", str[i]))
 				box->type = str[i];
 			ft_type_selector(argptr, box);
 		}
