@@ -6,7 +6,7 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 11:24:47 by mdesalle          #+#    #+#             */
-/*   Updated: 2020/12/18 10:57:34 by mdesalle         ###   ########.fr       */
+/*   Updated: 2020/12/20 16:07:30 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,24 +20,16 @@ static void	ft_craft1(va_list argptr, t_list *box)
 		ft_s_craft(va_arg(argptr, char *), box);
 	else
 		ft_di_craft(va_arg(argptr, int), box);
-	return ;
 }
 
 static void	ft_craft2(va_list argptr, t_list *box)
 {
 	if (box->type == 'u')
 		ft_u_craft(va_arg(argptr, unsigned int), box);
-/*	else if (box->type == 'p')
-	{
-		box->p = va_arg(argptr, void *);
-		ft_p_craft(box);
-		faut encore ajouter des paramètres, pour l'addr et l'end
-	}
-	else
-	{
-		box->xx = va_arg(argptr, unsigned int);
-		ft_xX_craft(box);
-	}*/
+	else if (box->type == 'x')
+		ft_xx_craft(va_arg(argptr, unsigned int), 0, box);
+	else if (box->type == 'X')
+		ft_xx_craft(va_arg(argptr, unsigned int), 1, box);
 }
 
 static void	ft_type_selector(va_list argptr, t_list *box)
@@ -47,7 +39,6 @@ static void	ft_type_selector(va_list argptr, t_list *box)
 		ft_craft1(argptr, box);
 	else
 		ft_craft2(argptr, box);
-	return ;
 }
 
 int			ft_parser(va_list argptr, char *str, t_list *box)
