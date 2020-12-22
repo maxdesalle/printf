@@ -6,7 +6,7 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/16 16:43:43 by mdesalle          #+#    #+#             */
-/*   Updated: 2020/12/18 14:57:16 by mdesalle         ###   ########.fr       */
+/*   Updated: 2020/12/22 09:40:43 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,7 @@ static void	ft_print_uint_one(unsigned int nbr, t_list *box)
 		ft_super_putchar(box->width - box->precision, '0', box);
 	else if (box->fminus == 0)
 		ft_super_putchar(box->width - box->precision, ' ', box);
-	if (ft_uintlen(nbr) < box->precision)
-		ft_super_putchar(box->precision - ft_uintlen(nbr), '0', box);
+	ft_super_putchar(box->precision - ft_uintlen(nbr), '0', box);
 	ft_putnbr_unsigned(nbr, box);
 	return ;
 }
@@ -44,8 +43,6 @@ static void	ft_print_uint_two(unsigned int nbr, t_list *box)
 		ft_super_putchar(box->width - ft_uintlen(nbr), '0', box);
 	else if (box->fminus == 0)
 		ft_super_putchar(box->width - ft_uintlen(nbr), ' ', box);
-	if (ft_uintlen(nbr) < box->precision)
-		ft_super_putchar(box->precision - ft_uintlen(nbr), '0', box);
 	ft_putnbr_unsigned(nbr, box);
 	return ;
 }

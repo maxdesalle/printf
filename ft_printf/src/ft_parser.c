@@ -6,7 +6,7 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 11:24:47 by mdesalle          #+#    #+#             */
-/*   Updated: 2020/12/20 16:07:30 by mdesalle         ###   ########.fr       */
+/*   Updated: 2020/12/22 10:38:57 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static void	ft_craft1(va_list argptr, t_list *box)
 		ft_c_craft(va_arg(argptr, int), box);
 	else if (box->type == 's')
 		ft_s_craft(va_arg(argptr, char *), box);
-	else
+	else if (box->type == 'd' || box->type == 'i')
 		ft_di_craft(va_arg(argptr, int), box);
 }
 
