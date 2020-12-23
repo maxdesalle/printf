@@ -6,7 +6,7 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/10 10:33:39 by mdesalle          #+#    #+#             */
-/*   Updated: 2020/12/23 10:13:15 by mdesalle         ###   ########.fr       */
+/*   Updated: 2020/12/23 13:14:52 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,11 @@
 
 int	main(void)
 {
-	ft_printf("%X\n", 29);
-	ft_printf("%X\n", 32);
+	int	a;
+	int	*ptr;
+
+	a = 20;
+	ptr = &a;
+	ft_printf("%20p\n", ptr);
 	return (0);
 }
