@@ -6,7 +6,7 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/20 10:02:42 by mdesalle          #+#    #+#             */
-/*   Updated: 2020/12/23 09:12:12 by mdesalle         ###   ########.fr       */
+/*   Updated: 2020/12/23 11:31:56 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,11 @@ static void	ft_dispatcher(char *basechar, int x, t_list *box)
 static void	ft_positive_hexa(int x, char *base, t_list *box)
 {
 	int     end;
-	char    basechar[end];
+	char    *basechar;
 
-	end = ft_baselen((unsigned)x) + 1;
-	basechar[end] = '\0';
-	end -= 1;
+	end = ft_baselen((unsigned)x);
+	if (!(basechar = malloc(sizeof(char) * (end + 1))))
+		return ;
 	while (end >= 0)
 	{
 		basechar[end] = (base[(x % 16)]);
@@ -49,11 +49,11 @@ static void	ft_positive_hexa(int x, char *base, t_list *box)
 static void	ft_negative_hexa(unsigned int y, char *base, t_list *box)
 {
 	int     end;
-	char    basechar[end];
+	char    *basechar;
 
-	end = ft_baselen(y) + 1;
-	basechar[end] = '\0';
-	end -= 1;
+	end = ft_baselen(y);
+	if (!(basechar = malloc(sizeof(char) * (end + 1))))
+		return ;
 	while (end >= 0)
 	{
 		basechar[end] = (base[(y % 16)]);

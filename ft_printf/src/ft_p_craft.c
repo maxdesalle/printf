@@ -1,21 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_p_craft.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/10 10:33:39 by mdesalle          #+#    #+#             */
-/*   Updated: 2020/12/23 10:13:15 by mdesalle         ###   ########.fr       */
+/*   Created: 2020/12/23 11:01:30 by mdesalle          #+#    #+#             */
+/*   Updated: 2020/12/23 11:33:01 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/printf.h"
-#include <stdio.h>
 
-int	main(void)
+void	ft_p_craft(unsigned long long x, t_list *box)
 {
-	ft_printf("%X\n", 29);
-	ft_printf("%X\n", 32);
-	return (0);
+	int	end;
+	char	*base;
+	char	basechar[end];
+
+	end = ft_baselen(x);
 }
