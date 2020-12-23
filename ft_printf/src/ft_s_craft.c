@@ -6,7 +6,7 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/07 08:11:17 by mdesalle          #+#    #+#             */
-/*   Updated: 2020/12/16 11:34:39 by mdesalle         ###   ########.fr       */
+/*   Updated: 2020/12/23 09:48:08 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,11 +64,11 @@ void	ft_s_craft(char *str, t_list *box)
 {
 	if (box->width > 1 && box->precision < 1)
 		ft_print_string_one(str, box);
-	else if (box->width > 1 && box->precision >= 0 && box->fminus == 0)
+	else if (box->width > 1 && box->precision >= 1 && box->fminus == 0)
 		ft_print_string_two(str, box);
-	else if (box->width > 1 && box->precision >= 0 && box->fminus == 1)
+	else if (box->width > 1 && box->precision >= 1 && box->fminus == 1)
 		ft_print_string_three(str, box);
-	else if (box->width < 1 && box->precision >= 0)
+	else if (box->width < 1 && box->precision >= 1)
 		ft_putstr_precision(str, box);
 	else
 		ft_putstr(str, box);

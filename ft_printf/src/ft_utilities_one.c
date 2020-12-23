@@ -6,7 +6,7 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/04 16:28:10 by mdesalle          #+#    #+#             */
-/*   Updated: 2020/12/16 11:50:01 by mdesalle         ###   ########.fr       */
+/*   Updated: 2020/12/23 09:34:08 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ void	ft_putchar(char c, t_list *box)
 
 void	ft_putstr(char *str, t_list *box)
 {
+	if (box->precision == 0 && *str == '0')
+		return ;
 	while (*str != '\0')
 	{
 		write(1, str++, 1);
