@@ -6,7 +6,7 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 09:02:17 by mdesalle          #+#    #+#             */
-/*   Updated: 2020/12/23 11:02:31 by mdesalle         ###   ########.fr       */
+/*   Updated: 2020/12/24 09:26:16 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,12 @@ typedef struct	s_list
 	int				width;
 	int				fzero;
 	int				fplus;
-	int				ftag;
 	int				len;
 	char			type;
 }				t_list;
 
 int				ft_baselen(unsigned long x);
 int				ft_printf(const char *str, ...);
-int				ft_parser(va_list argptr, char *str, t_list *box);
 char			*ft_strchr(const char *s, int c);
 void			ft_putchar(char c, t_list *box);
 void			ft_super_putchar(int len, char c, t_list *box);
@@ -42,6 +40,7 @@ void			ft_putstr(char *str, t_list *box);
 void			ft_s_craft(char *str, t_list *box);
 void			ft_putstr_precision(char *str, t_list *box);
 void			ft_di_craft(int nbr, t_list *box);
+void			ft_parser(va_list argptr, char *str, t_list *box);
 long			ft_atoi_alpha(const char *nptr);
 void			ft_putnbr(int n, t_list *box);
 void			ft_u_craft(unsigned int nbr, t_list *box);

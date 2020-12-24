@@ -6,7 +6,7 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 08:51:16 by mdesalle          #+#    #+#             */
-/*   Updated: 2020/12/18 10:51:11 by mdesalle         ###   ########.fr       */
+/*   Updated: 2020/12/24 09:26:38 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,14 +44,11 @@ static void	ft_width(char *str, t_list *box)
 
 static void	ft_flag(char *str, t_list *box)
 {
-	box->ftag = 0;
 	box->fzero = 0;
 	box->fplus = 0;
 	box->fminus = 0;
 	box->fspace = 0;
-	if (ft_strchr(str, '#'))
-		box->ftag += 1;
-	else if (ft_strchr(str, '0'))
+	if (ft_strchr(str, '0'))
 		box->fzero += 1;
 	else if (ft_strchr(str, '+'))
 		box->fplus += 1;

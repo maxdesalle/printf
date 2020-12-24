@@ -6,7 +6,7 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 11:24:47 by mdesalle          #+#    #+#             */
-/*   Updated: 2020/12/23 11:01:23 by mdesalle         ###   ########.fr       */
+/*   Updated: 2020/12/24 09:23:41 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ static void	ft_type_selector(va_list argptr, t_list *box)
 		ft_craft2(argptr, box);
 }
 
-int			ft_parser(va_list argptr, char *str, t_list *box)
+void		ft_parser(va_list argptr, char *str, t_list *box)
 {
 	int	i;
 
@@ -65,5 +65,4 @@ int			ft_parser(va_list argptr, char *str, t_list *box)
 			ft_putchar(str[i], box);
 		i++;
 	}
-	return (box->len);
 }

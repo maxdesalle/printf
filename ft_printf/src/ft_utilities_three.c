@@ -6,7 +6,7 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/18 11:34:12 by mdesalle          #+#    #+#             */
-/*   Updated: 2020/12/23 08:52:38 by mdesalle         ###   ########.fr       */
+/*   Updated: 2020/12/24 08:32:38 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,10 @@ void	ft_putnbr_unsigned(unsigned int nbr, t_list *box)
 		ft_putnbr(x % 10, box);
 	}
 	else
+	{
 		ft_putchar(x + '0', box);
+		box->len += 1;
+	}
 }
 
 int      ft_baselen(unsigned long x)
