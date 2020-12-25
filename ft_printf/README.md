@@ -4,7 +4,19 @@
 The project consists of re-creating from scratch the ```printf``` function in C from the ```stdio.h``` library.
 
 ## How to use it
-The ```ft_printf``` function supports the following types: ```cspdiuxX``` as well as the following flags: ```+ -0```.
+The ```ft_printf``` function supports the following types: 
+```
+c: char
+s: string
+p: pointer
+d: int
+i: int
+u: unsigned int
+x: lowercase hexadecimal number
+X: uppercase hexadecimal number
+```
+
+as well as the following flags: ```-0.* +```.
 
 if you want to try it out, simply clone this repository and execute the following commands:
 ```console
