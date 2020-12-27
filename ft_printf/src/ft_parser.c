@@ -6,7 +6,7 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 11:24:47 by mdesalle          #+#    #+#             */
-/*   Updated: 2020/12/27 16:55:46 by mdesalle         ###   ########.fr       */
+/*   Updated: 2020/12/27 18:29:25 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void		ft_parser(va_list *argptr, char *str, t_list *box)
 	{
 		if (str[i] == '%' && str[i + 1] != '%')
 		{
-			ft_analysis(&str[++i], box);
+			ft_analysis(argptr, &str[++i], box);
 			while (ft_strchr("cspdiuxX", str[i]) == NULL)
 				i++;
 			if (ft_strchr("cspdiuxX", str[i]))
