@@ -6,7 +6,7 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/23 11:01:30 by mdesalle          #+#    #+#             */
-/*   Updated: 2020/12/23 13:16:50 by mdesalle         ###   ########.fr       */
+/*   Updated: 2020/12/27 14:20:35 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ static void	ft_print_pointer(char *basechar, t_list *box)
 		ft_putstr(basechar, box);
 		return ;
 	}
+	free(basechar);
 }
 
 void	ft_p_craft(unsigned long long x, t_list *box)

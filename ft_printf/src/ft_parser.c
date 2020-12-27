@@ -6,35 +6,35 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 11:24:47 by mdesalle          #+#    #+#             */
-/*   Updated: 2020/12/24 09:23:41 by mdesalle         ###   ########.fr       */
+/*   Updated: 2020/12/27 16:55:46 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/printf.h"
 
-static void	ft_craft1(va_list argptr, t_list *box)
+static void	ft_craft1(va_list *argptr, t_list *box)
 {
 	if (box->type == 'c')
-		ft_c_craft(va_arg(argptr, int), box);
+		ft_c_craft(va_arg(*argptr, int), box);
 	else if (box->type == 's')
-		ft_s_craft(va_arg(argptr, char *), box);
+		ft_s_craft(va_arg(*argptr, char *), box);
 	else if (box->type == 'd' || box->type == 'i')
-		ft_di_craft(va_arg(argptr, int), box);
+		ft_di_craft(va_arg(*argptr, int), box);
 }
 
-static void	ft_craft2(va_list argptr, t_list *box)
+static void	ft_craft2(va_list *argptr, t_list *box)
 {
 	if (box->type == 'u')
-		ft_u_craft(va_arg(argptr, unsigned int), box);
+		ft_u_craft(va_arg(*argptr, unsigned int), box);
 	else if (box->type == 'x')
-		ft_xx_craft(va_arg(argptr, int), 0, box);
+		ft_xx_craft(va_arg(*argptr, int), 0, box);
 	else if (box->type == 'X')
-		ft_xx_craft(va_arg(argptr, int), 1, box);
+		ft_xx_craft(va_arg(*argptr, int), 1, box);
 	else if (box->type == 'p')
-		ft_p_craft(va_arg(argptr, unsigned long long), box);
+		ft_p_craft(va_arg(*argptr, unsigned long long), box);
 }
 
-static void	ft_type_selector(va_list argptr, t_list *box)
+static void	ft_type_selector(va_list *argptr, t_list *box)
 {
 	if (box->type == 'c' || box->type == 's' || box->type == 'd'
 			|| box->type == 'i')
@@ -43,12 +43,12 @@ static void	ft_type_selector(va_list argptr, t_list *box)
 		ft_craft2(argptr, box);
 }
 
-void		ft_parser(va_list argptr, char *str, t_list *box)
+void		ft_parser(va_list *argptr, char *str, t_list *box)
 {
 	int	i;
 
 	i = 0;
-	while (str[i] != '\0')
+	while (str[i] != '\0' && i < ft_strlen(str))
 	{
 		if (str[i] == '%' && str[i + 1] != '%')
 		{
