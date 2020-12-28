@@ -6,7 +6,7 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 09:02:17 by mdesalle          #+#    #+#             */
-/*   Updated: 2020/12/28 07:41:12 by mdesalle         ###   ########.fr       */
+/*   Updated: 2020/12/28 09:09:48 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ typedef struct	s_list
 	int				width;
 	int				fzero;
 	int				fplus;
+	int				fdot;
 	int				len;
 	char			type;
 }				t_list;

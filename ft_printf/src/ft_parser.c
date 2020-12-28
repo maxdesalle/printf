@@ -6,7 +6,7 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 11:24:47 by mdesalle          #+#    #+#             */
-/*   Updated: 2020/12/28 07:45:13 by mdesalle         ###   ########.fr       */
+/*   Updated: 2020/12/28 08:34:46 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void		ft_parser(va_list *argptr, char *str, t_list *box)
 	int	i;
 
 	i = 0;
-	while (str[i] != '\0' && i < ft_strlen(str))
+	while (str[i] != '\0')
 	{
 		if (str[i] == '%' && str[i + 1] != '%')
 		{
