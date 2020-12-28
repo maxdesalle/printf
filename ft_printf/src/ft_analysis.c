@@ -6,7 +6,7 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 08:51:16 by mdesalle          #+#    #+#             */
-/*   Updated: 2020/12/28 09:21:06 by mdesalle         ###   ########.fr       */
+/*   Updated: 2020/12/28 11:54:16 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ static void	ft_width(va_list *argptr, char *str, t_list *box)
 	box->width = 0;
 	while (*str != '\0' && *str != '.')
 	{
-		if (*str >= '0' && *str <= '9')
+		if (*str >= '1' && *str <= '9')
 		{
 			box->width = ft_atoi_alpha(str);
 			return ;
@@ -63,9 +63,7 @@ static void	ft_flag(char *str, t_list *box)
 	while (*str != '\0' && *str != 'c' && *str != 's' && *str != 'p' && *str != 'd'
 			&& *str != 'i' && *str != 'u' && *str != 'x' && *str != 'X')
 	{
-		if (*str == '0' && (!(*str >= '1' && *str <= '9')))
-			box->fzero += 1;
-		else if (*str == '-')
+		if (*str == '-')
 			box->fminus += 1;
 		else if (*str == '+')
 			box->fplus += 1;
@@ -78,9 +76,18 @@ static void	ft_flag(char *str, t_list *box)
 	return ;
 }
 
+static void	ft_fzero(char *str, t_list *box)
+{
+	while (*str != '\0' && (!(*str >= '1' && *str <= '9')))
+		if (*str++ == '0')
+			box->fzero += 1;
+	return ;
+}
+
 void		ft_analysis(va_list *argptr, char *str, t_list *box)
 {
 	ft_precision(argptr, str, box);
 	ft_width(argptr, str, box);
 	ft_flag(str, box);
+	ft_fzero(str, box);
 }

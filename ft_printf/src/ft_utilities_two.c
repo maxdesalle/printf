@@ -6,7 +6,7 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/15 11:04:09 by mdesalle          #+#    #+#             */
-/*   Updated: 2020/12/28 09:18:18 by mdesalle         ###   ########.fr       */
+/*   Updated: 2020/12/28 10:56:08 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	ft_putnbr(int n, t_list *box)
 	long	x;
 
 	x = n;
-	if (x == 0 && box->precision == 0)
+	if (box->fdot == 1 && x == 0 && box->precision == 0)
 		return ;
 	if (x < 0)
 	{
