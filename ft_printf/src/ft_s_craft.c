@@ -6,7 +6,7 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/07 08:11:17 by mdesalle          #+#    #+#             */
-/*   Updated: 2020/12/28 10:02:27 by mdesalle         ###   ########.fr       */
+/*   Updated: 2020/12/28 10:43:33 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,8 @@ static void	ft_print_string_three(char *str, t_list *box)
 
 void	ft_s_craft(char *str, t_list *box)
 {
+	if (!str)
+		str = "(null)";
 	if (box->width >= 1 && box->precision < 1 && box->fdot == 0)
 		ft_print_string_one(str, box);
 	else if (box->width >= 1 && box->precision < 1 && box->fdot == 1)
