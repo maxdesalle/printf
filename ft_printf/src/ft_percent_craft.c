@@ -1,20 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_percent_craft.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/10 10:33:39 by mdesalle          #+#    #+#             */
-/*   Updated: 2020/12/28 14:05:51 by mdesalle         ###   ########.fr       */
+/*   Created: 2020/12/28 13:23:55 by mdesalle          #+#    #+#             */
+/*   Updated: 2020/12/28 13:36:31 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/printf.h"
-#include <stdio.h>
 
-int	main(void)
+void	ft_percent_craft(t_list *box)
 {
-	ft_printf("%.*u", -1, 0);
-	return (0);
+	if (box->fminus == 1)
+	{
+		ft_putchar('%', box);
+		ft_super_putchar(box->width - 1, ' ', box);
+		return ;
+	}
+	else if (box->fzero == 1)
+		ft_super_putchar(box->width - 1, '0', box);
+	else if (box->fminus == 0)
+		ft_super_putchar(box->width - 1, ' ', box);
+	ft_putchar('%', box);
+	return ;
 }

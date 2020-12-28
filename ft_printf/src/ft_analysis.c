@@ -6,7 +6,7 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 08:51:16 by mdesalle          #+#    #+#             */
-/*   Updated: 2020/12/28 11:54:16 by mdesalle         ###   ########.fr       */
+/*   Updated: 2020/12/28 13:39:11 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,9 @@ static void	ft_flag(char *str, t_list *box)
 	box->fminus = 0;
 	box->fspace = 0;
 	box->fdot = 0;
-	while (*str != '\0' && *str != 'c' && *str != 's' && *str != 'p' && *str != 'd'
-			&& *str != 'i' && *str != 'u' && *str != 'x' && *str != 'X')
+	while (*str != '\0' && *str != 'c' && *str != 's' && *str != 'p'
+			&& *str != 'd' && *str != 'i' && *str != 'u'
+			&& *str != 'x' && *str != 'X' && *str != '%')
 	{
 		if (*str == '-')
 			box->fminus += 1;

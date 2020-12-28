@@ -6,7 +6,7 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/16 16:43:43 by mdesalle          #+#    #+#             */
-/*   Updated: 2020/12/28 07:46:41 by mdesalle         ###   ########.fr       */
+/*   Updated: 2020/12/28 14:02:04 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static void	ft_print_uint_one(unsigned int nbr, t_list *box)
 		ft_super_putchar(box->width - box->precision, ' ', box);
 		return ;
 	}
-	else if (box->fzero == 1)
+	else if (box->fzero == 1 && box->fdot == 0)
 		ft_super_putchar(box->width - box->precision, '0', box);
 	else if (box->fminus == 0)
 		ft_super_putchar(box->width - box->precision, ' ', box);
@@ -41,7 +41,7 @@ static void	ft_print_uint_two(unsigned int nbr, t_list *box)
 		ft_super_putchar(box->width - ft_uintlen(nbr), ' ', box);
 		return ;
 	}
-	else if (box->fzero == 1)
+	else if (box->fzero == 1 && box->fdot == 0)
 		ft_super_putchar(box->width - ft_uintlen(nbr), '0', box);
 	else if (box->fminus == 0)
 		ft_super_putchar(box->width - ft_uintlen(nbr), ' ', box);
@@ -61,13 +61,18 @@ static void	ft_print_uint_four(unsigned int nbr, t_list *box)
 	if (box->fminus == 1)
 	{
 		ft_putnbr_unsigned(nbr, box);
-		ft_super_putchar(box->width - ft_uintlen(nbr), ' ', box);
+		if (box->fdot == 0)
+			ft_super_putchar(box->width - ft_uintlen(nbr), ' ', box);
+		else if (box->fdot == 1)
+			ft_super_putchar(box->width, ' ', box);
 		return ;
 	}
 	else if (box->fzero == 1)
 		ft_super_putchar(box->width - ft_uintlen(nbr), '0', box);
-	else if (box->fminus == 0)
+	else if (box->fminus == 0 && box->fdot == 0)
 		ft_super_putchar(box->width - ft_uintlen(nbr), ' ', box);
+	else if (box->fminus == 0 && box->fdot == 1)
+		ft_super_putchar(box->width, ' ', box);
 	ft_putnbr_unsigned(nbr, box);
 	return ;
 }

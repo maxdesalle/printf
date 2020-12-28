@@ -6,7 +6,7 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 09:02:17 by mdesalle          #+#    #+#             */
-/*   Updated: 2020/12/28 09:09:48 by mdesalle         ###   ########.fr       */
+/*   Updated: 2020/12/28 13:29:43 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,9 @@ void			ft_print_hexa_three(char *basechar, int x, t_list *box);
 
 /* ft_p_craft.c */
 void			ft_p_craft(unsigned long long x, t_list *box);
+
+/* ft_percent_craft.c */
+void			ft_percent_craft(t_list *box);
 
 /* ft_utilities_one.c */
 void                    ft_putstr(char *str, t_list *box);

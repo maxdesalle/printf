@@ -6,7 +6,7 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/18 11:34:12 by mdesalle          #+#    #+#             */
-/*   Updated: 2020/12/28 07:47:24 by mdesalle         ###   ########.fr       */
+/*   Updated: 2020/12/28 14:10:17 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_putnbr_unsigned(unsigned int nbr, t_list *box)
 	unsigned long	x;
 
 	x = nbr;
-	if (x == 0 && box->precision == 0)
+	if (x == 0 && box->fdot == 1 && box->precision == 0) 
 		return ;
 	if (x < 0)
 		x *= -1;

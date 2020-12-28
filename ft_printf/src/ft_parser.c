@@ -6,7 +6,7 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 11:24:47 by mdesalle          #+#    #+#             */
-/*   Updated: 2020/12/28 08:34:46 by mdesalle         ###   ########.fr       */
+/*   Updated: 2020/12/28 13:44:29 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ static void	ft_craft2(va_list *argptr, t_list *box)
 		ft_xx_craft(va_arg(*argptr, int), 1, box);
 	else if (box->type == 'p')
 		ft_p_craft(va_arg(*argptr, unsigned long long), box);
+	else if (box->type == '%')
+		ft_percent_craft(box);
 }
 
 static void	ft_type_selector(va_list *argptr, t_list *box)
@@ -55,9 +57,9 @@ void		ft_parser(va_list *argptr, char *str, t_list *box)
 		if (str[i] == '%' && str[i + 1] != '%')
 		{
 			ft_analysis(argptr, &str[++i], box);
-			while (ft_strchr("cspdiuxX", str[i]) == NULL)
+			while (ft_strchr("cspdiuxX%", str[i]) == NULL)
 				i++;
-			if (ft_strchr("cspdiuxX", str[i]))
+			if (ft_strchr("cspdiuxX%", str[i]))
 				box->type = str[i];
 			ft_type_selector(argptr, box);
 		}
