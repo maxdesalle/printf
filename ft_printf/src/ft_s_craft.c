@@ -6,11 +6,13 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/07 08:11:17 by mdesalle          #+#    #+#             */
-/*   Updated: 2020/12/23 09:48:08 by mdesalle         ###   ########.fr       */
+/*   Updated: 2020/12/28 07:46:25 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/printf.h"
+
+/* print strings */
 
 static void	ft_print_string_one(char *str, t_list *box)
 {

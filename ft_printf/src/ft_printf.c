@@ -6,11 +6,13 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 09:00:48 by mdesalle          #+#    #+#             */
-/*   Updated: 2020/12/27 16:54:31 by mdesalle         ###   ########.fr       */
+/*   Updated: 2020/12/28 07:46:04 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/printf.h"
+
+/* main function */
 
 int	ft_printf(const char *str, ...)
 {

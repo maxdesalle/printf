@@ -6,11 +6,13 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/23 11:01:30 by mdesalle          #+#    #+#             */
-/*   Updated: 2020/12/27 14:20:35 by mdesalle         ###   ########.fr       */
+/*   Updated: 2020/12/28 07:44:07 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/printf.h"
+
+/* prints pointers */
 
 static void	ft_print_pointer(char *basechar, t_list *box)
 {

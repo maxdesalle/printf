@@ -6,11 +6,13 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 08:51:16 by mdesalle          #+#    #+#             */
-/*   Updated: 2020/12/27 18:29:59 by mdesalle         ###   ########.fr       */
+/*   Updated: 2020/12/28 07:43:47 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/printf.h"
+
+/* catches the flags given in the string as parameter and stores them inside a linked list (box) */
 
 static void	ft_precision(va_list *argptr, char *str, t_list *box)
 {

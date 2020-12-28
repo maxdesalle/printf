@@ -6,11 +6,13 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/15 11:04:09 by mdesalle          #+#    #+#             */
-/*   Updated: 2020/12/24 08:36:53 by mdesalle         ###   ########.fr       */
+/*   Updated: 2020/12/28 07:48:18 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/printf.h"
+
+/* ft_strlen and its alternatives for ints and unsigned ints, and putnbr */
 
 size_t	ft_intlen(long x)
 {

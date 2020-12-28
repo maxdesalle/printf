@@ -6,11 +6,13 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/16 16:43:43 by mdesalle          #+#    #+#             */
-/*   Updated: 2020/12/22 09:40:43 by mdesalle         ###   ########.fr       */
+/*   Updated: 2020/12/28 07:46:41 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/printf.h"
+
+/* prints unsigned ints */
 
 static void	ft_print_uint_one(unsigned int nbr, t_list *box)
 {

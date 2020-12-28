@@ -6,11 +6,13 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/23 08:53:01 by mdesalle          #+#    #+#             */
-/*   Updated: 2020/12/27 14:21:17 by mdesalle         ###   ########.fr       */
+/*   Updated: 2020/12/28 07:49:28 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/printf.h"
+
+/* printing of hexadecimal numbers */
 
 void     ft_print_hexa_one(char *basechar, int x, t_list *box)
 {

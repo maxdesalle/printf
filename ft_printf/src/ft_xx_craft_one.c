@@ -6,11 +6,13 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/20 10:02:42 by mdesalle          #+#    #+#             */
-/*   Updated: 2020/12/27 14:20:50 by mdesalle         ###   ########.fr       */
+/*   Updated: 2020/12/28 07:49:07 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/printf.h"
+
+/* printing of hexadecimal numbers */
 
 static void	ft_dispatcher(char *basechar, int x, t_list *box)
 {

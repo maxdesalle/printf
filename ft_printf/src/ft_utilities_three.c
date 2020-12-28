@@ -6,11 +6,13 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/18 11:34:12 by mdesalle          #+#    #+#             */
-/*   Updated: 2020/12/24 08:32:38 by mdesalle         ###   ########.fr       */
+/*   Updated: 2020/12/28 07:47:24 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/printf.h"
+
+/* a ft_strlen for base numbers and putnbr for unsigned numbers */
 
 void	ft_putnbr_unsigned(unsigned int nbr, t_list *box)
 {

@@ -6,11 +6,13 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/15 10:34:39 by mdesalle          #+#    #+#             */
-/*   Updated: 2020/12/22 10:27:03 by mdesalle         ###   ########.fr       */
+/*   Updated: 2020/12/28 07:44:31 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/printf.h"
+
+/* prints ints */
 
 static void	ft_print_int_one(int nbr, t_list *box)
 {

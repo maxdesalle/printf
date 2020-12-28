@@ -6,11 +6,13 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/04 16:28:10 by mdesalle          #+#    #+#             */
-/*   Updated: 2020/12/23 13:14:17 by mdesalle         ###   ########.fr       */
+/*   Updated: 2020/12/28 07:46:56 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/printf.h"
+
+/* some basic functions to print and a modified atoi */
 
 void	ft_putchar(char c, t_list *box)
 {
