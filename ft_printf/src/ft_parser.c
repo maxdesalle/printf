@@ -6,7 +6,7 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 11:24:47 by mdesalle          #+#    #+#             */
-/*   Updated: 2020/12/28 13:44:29 by mdesalle         ###   ########.fr       */
+/*   Updated: 2020/12/29 14:17:53 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ static void	ft_craft2(va_list *argptr, t_list *box)
 	if (box->type == 'u')
 		ft_u_craft(va_arg(*argptr, unsigned int), box);
 	else if (box->type == 'x')
-		ft_xx_craft(va_arg(*argptr, int), 0, box);
+		ft_xx_craft(va_arg(*argptr, long), 0, box);
 	else if (box->type == 'X')
-		ft_xx_craft(va_arg(*argptr, int), 1, box);
+		ft_xx_craft(va_arg(*argptr, long), 1, box);
 	else if (box->type == 'p')
 		ft_p_craft(va_arg(*argptr, unsigned long long), box);
 	else if (box->type == '%')
