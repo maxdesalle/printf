@@ -6,7 +6,7 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/23 11:01:30 by mdesalle          #+#    #+#             */
-/*   Updated: 2020/12/28 13:50:05 by mdesalle         ###   ########.fr       */
+/*   Updated: 2020/12/29 09:08:29 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,13 @@
 
 /* prints pointers */
 
-static void	ft_print_pointer(char *basechar, t_list *box)
+static void	ft_print_pointer(unsigned long long x, char *basechar, t_list *box)
 {
+	if (box->fdot == 1 && box->width < 0 && x == 0)
+	{
+		ft_putstr("0x0", box);
+		return ;
+	}
 	if (box->fminus == 1)
 	{
 		ft_putstr("0x", box);
@@ -45,7 +50,7 @@ void	ft_p_craft(unsigned long long x, t_list *box)
 	base = "0123456789abcdef";
 	if (box->fdot == 1 && box->width > 2 && !x)
 		ft_putchar(' ', box);
-	if (box->fdot == 1 && x == 0)
+	if (box->fdot == 1 && x == 0 && box->width == 0 && box->precision == 0)
 		return ;
 	if (!(basechar = malloc(sizeof(char) * (end))))
 		return ;
@@ -55,5 +60,5 @@ void	ft_p_craft(unsigned long long x, t_list *box)
 		x /= 16;
 		end -= 1;
 	}
-	ft_print_pointer(basechar, box);
+	ft_print_pointer(x, basechar, box);
 }
