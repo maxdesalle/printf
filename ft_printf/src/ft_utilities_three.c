@@ -6,7 +6,7 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/18 11:34:12 by mdesalle          #+#    #+#             */
-/*   Updated: 2020/12/29 14:03:51 by mdesalle         ###   ########.fr       */
+/*   Updated: 2020/12/30 09:28:19 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,14 +43,4 @@ int      ft_baselen(unsigned long x)
         while ((x /= 16) > 0)
                 y += 1;
         return (y);
-}
-
-int	ft_itoi(int x, t_list *box)
-{
-	if (x < 0)
-	{
-		box->fminus += 1;
-		x *= -1;
-	}
-	return (x);
 }

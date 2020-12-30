@@ -6,7 +6,7 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/20 10:02:42 by mdesalle          #+#    #+#             */
-/*   Updated: 2020/12/29 14:29:01 by mdesalle         ###   ########.fr       */
+/*   Updated: 2020/12/30 10:06:19 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,7 @@ void	ft_xx_craft(int x, int type, t_list *box)
 	char	*base;
 	unsigned int	y;
 
+	y = (unsigned)x;
 	if (type == 0)
 		base = "0123456789abcdef";
 	else if (type == 1)

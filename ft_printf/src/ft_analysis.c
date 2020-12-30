@@ -6,7 +6,7 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 08:51:16 by mdesalle          #+#    #+#             */
-/*   Updated: 2020/12/29 14:13:26 by mdesalle         ###   ########.fr       */
+/*   Updated: 2020/12/30 10:24:18 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 
 static void	ft_precision(va_list *argptr, char *str, t_list *box)
 {
-	box->precision = 0;
 	while (*str != '\0')
 	{
 		if (*str == '.')
@@ -35,7 +34,6 @@ static void	ft_precision(va_list *argptr, char *str, t_list *box)
 
 static void	ft_width(va_list *argptr, char *str, t_list *box)
 {
-	box->width = 0;
 	while (*str != '\0' && *str != '.')
 	{
 		if (*str >= '1' && *str <= '9')
@@ -45,7 +43,12 @@ static void	ft_width(va_list *argptr, char *str, t_list *box)
 		}
 		else if (*str == '*')
 		{
-			box->width = ft_itoi(va_arg(*argptr, int), box);
+			box->width = va_arg(*argptr, int);
+			if (box->width < 0)
+			{
+				box->width *= -1;
+				box->fminus += 1;
+			}
 			return ;
 		}
 		str++;
@@ -55,11 +58,6 @@ static void	ft_width(va_list *argptr, char *str, t_list *box)
 
 static void	ft_flag(char *str, t_list *box)
 {
-	box->fzero = 0;
-	box->fplus = 0;
-	box->fminus = 0;
-	box->fspace = 0;
-	box->fdot = 0;
 	while (*str != '\0' && *str != 'c' && *str != 's' && *str != 'p'
 			&& *str != 'd' && *str != 'i' && *str != 'u'
 			&& *str != 'x' && *str != 'X' && *str != '%')
@@ -74,6 +72,13 @@ static void	ft_flag(char *str, t_list *box)
 			box->fdot += 1;
 		str++;
 	}
+	if (box->fminus == 2)
+		box->fminus -= 1;
+	if (box->precision < 0)
+	{
+		box->precision = 0;
+		box->fdot = 0;
+	}
 	return ;
 }
 
@@ -87,8 +92,15 @@ static void	ft_fzero(char *str, t_list *box)
 
 void		ft_analysis(va_list *argptr, char *str, t_list *box)
 {
+	box->width = 0;
+	box->precision = 0;
+	box->fminus = 0;
+	box->fplus = 0;
+	box->fspace = 0;
+	box->fdot = 0;
+	box->fzero = 0;
+	ft_width(argptr, str, box);
 	ft_precision(argptr, str, box);
 	ft_flag(str, box);
-	ft_width(argptr, str, box);
 	ft_fzero(str, box);
 }

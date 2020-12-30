@@ -6,7 +6,7 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 09:02:17 by mdesalle          #+#    #+#             */
-/*   Updated: 2020/12/29 14:29:43 by mdesalle         ###   ########.fr       */
+/*   Updated: 2020/12/30 09:28:31 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,6 @@ char                    *ft_strchr(const char *s, int c);
 
 /* ft_utilities_three.c */
 int                             ft_baselen(unsigned long x);
-int				ft_itoi(int x, t_list *box);
 void                    ft_putnbr_unsigned(unsigned int nbr, t_list *box);
 
 #endif
