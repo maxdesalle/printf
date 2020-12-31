@@ -6,7 +6,7 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/20 10:02:42 by mdesalle          #+#    #+#             */
-/*   Updated: 2020/12/31 14:00:47 by mdesalle         ###   ########.fr       */
+/*   Updated: 2020/12/31 14:20:17 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ static void	ft_positive_hexa(int x, char *base, t_list *box)
 	end = ft_baselen((unsigned)x);
 	if (!(basechar = malloc(sizeof(char) * (end + 1))))
 		return ;
-	basechar[end + 1] = '\0';
+	basechar[end] = '\0';
 	while (end >= 0)
 	{
 		basechar[end] = (base[(x % 16)]);
@@ -57,7 +57,7 @@ static void	ft_negative_hexa(unsigned int y, char *base, t_list *box)
 	end = ft_baselen(y);
 	if (!(basechar = malloc(sizeof(char) * (end + 1))))
 		return ;
-	basechar[end + 1] = '\0';
+	basechar[end] = '\0';
 	while (end >= 0)
 	{
 		basechar[end] = (base[(y % 16)]);
