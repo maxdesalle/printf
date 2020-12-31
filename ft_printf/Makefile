@@ -6,7 +6,7 @@
 #    By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/04 16:09:49 by mdesalle          #+#    #+#              #
-#    Updated: 2020/12/28 13:30:07 by mdesalle         ###   ########.fr        #
+#    Updated: 2020/12/31 10:47:04 by mdesalle         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = libftprintf.a
 
 CC = gcc
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -w -Wall -Wextra -Werror -g3 -fsanitize=address
 
 SRC = src/ft_c_craft.c \
       src/ft_analysis.c \
@@ -34,7 +34,7 @@ SRC = src/ft_c_craft.c \
 OBJ = $(SRC:.c=.o)
 
 %.o: %.c
-	$(CC) -I include -c $^ -o $@
+	$(CC) $(CFLAGS) -I include -c $^ -o $@
 
 all: $(NAME)
 

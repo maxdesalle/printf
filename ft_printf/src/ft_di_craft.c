@@ -6,7 +6,7 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/15 10:34:39 by mdesalle          #+#    #+#             */
-/*   Updated: 2020/12/30 10:42:41 by mdesalle         ###   ########.fr       */
+/*   Updated: 2020/12/31 10:40:45 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,9 +93,9 @@ void	ft_di_craft(int nbr, t_list *box)
 {
 	if (box->fspace == 1)
 		ft_putchar(' ', box);
-	if (box->width > 1 && box->precision >= 1 && box->precision >= ft_intlen(nbr))
+	if (box->width > 1 && box->precision >= 1 && (size_t)box->precision >= ft_intlen(nbr))
 		ft_print_int_one(nbr, box);
-	else if (box->width > 1 && box->precision >= 1 && box->precision < ft_intlen(nbr))
+	else if (box->width > 1 && box->precision >= 1 && (size_t)box->precision < ft_intlen(nbr))
 		ft_print_int_two(nbr, box);
 	else if (box->width < 1 && box->precision >= 1)
 	{

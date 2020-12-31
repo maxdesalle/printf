@@ -6,7 +6,7 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/16 16:43:43 by mdesalle          #+#    #+#             */
-/*   Updated: 2020/12/28 14:02:04 by mdesalle         ###   ########.fr       */
+/*   Updated: 2020/12/31 10:41:10 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,9 +79,9 @@ static void	ft_print_uint_four(unsigned int nbr, t_list *box)
 
 void	ft_u_craft(unsigned int nbr, t_list *box)
 {
-	if (box->width > 1 && box->precision >= 1 && box->precision >= ft_uintlen(nbr))
+	if (box->width > 1 && box->precision >= 1 && (size_t)box->precision >= ft_uintlen(nbr))
 		ft_print_uint_one(nbr, box);
-	else if (box->width > 1 && box->precision >= 1 && box->precision < ft_uintlen(nbr))
+	else if (box->width > 1 && box->precision >= 1 && (size_t)box->precision < ft_uintlen(nbr))
 		ft_print_uint_two(nbr, box);
 	else if (box->width < 1 && box->precision >= 1)
 		ft_print_uint_three(nbr, box);

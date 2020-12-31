@@ -6,7 +6,7 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/07 08:11:17 by mdesalle          #+#    #+#             */
-/*   Updated: 2020/12/28 10:43:33 by mdesalle         ###   ########.fr       */
+/*   Updated: 2020/12/31 10:40:19 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,14 @@ static void	ft_print_string_one(char *str, t_list *box)
 
 static void	ft_print_string_two(char *str, t_list *box)
 {
-	if (box->width > box->precision && box->precision <= ft_strlen(str))
+	if (box->width > box->precision && (size_t)box->precision <= ft_strlen(str))
 	{
 		ft_super_putchar(box->width - box->precision, ' ', box);
 		ft_putstr_precision(str, box);
 	}
-	else if (box->width <= box->precision && box->precision <= ft_strlen(str))
+	else if (box->width <= box->precision && (size_t)box->precision <= ft_strlen(str))
 		ft_putstr_precision(str, box);
-	else if (box->precision > ft_strlen(str))
+	else if ((size_t)box->precision > ft_strlen(str))
 	{
 		ft_super_putchar(box->width - ft_strlen(str), ' ', box);
 		ft_putstr(str, box);
@@ -47,14 +47,14 @@ static void	ft_print_string_two(char *str, t_list *box)
 
 static void	ft_print_string_three(char *str, t_list *box)
 {
-        if (box->width > box->precision && box->precision <= ft_strlen(str))
+        if (box->width > box->precision && (size_t)box->precision <= ft_strlen(str))
         {
                 ft_putstr_precision(str, box);
 		ft_super_putchar(box->width - box->precision, ' ', box);
         }
-	else if (box->width < box->precision && box->precision <= ft_strlen(str))
+	else if (box->width < box->precision && (size_t)box->precision <= ft_strlen(str))
                 ft_putstr_precision(str, box);
-        else if (box->precision > ft_strlen(str))
+        else if ((size_t)box->precision > ft_strlen(str))
         {
                 ft_putstr(str, box);
 		ft_super_putchar(box->width - ft_strlen(str), ' ', box);

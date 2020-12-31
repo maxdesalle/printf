@@ -6,7 +6,7 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/20 10:02:42 by mdesalle          #+#    #+#             */
-/*   Updated: 2020/12/31 09:17:20 by mdesalle         ###   ########.fr       */
+/*   Updated: 2020/12/31 11:01:32 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
 
 static void	ft_dispatcher(char *basechar, int x, t_list *box)
 {
-	if (box->width > 1 && box->precision >= 1 && box->precision >= ft_strlen(basechar))
+	if (box->width > 1 && box->precision >= 1 && (size_t)box->precision >= ft_strlen(basechar))
 		ft_print_hexa_one(basechar, x, box);
-	else if (box->width > 1 && box->precision >= 1 && box->precision < ft_strlen(basechar))
+	else if (box->width > 1 && box->precision >= 1 && (size_t)box->precision < ft_strlen(basechar))
 		ft_print_hexa_two(basechar, x, box);
 	else if (box->width < 1 && box->precision >= 1)
 	{
