@@ -6,7 +6,7 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/10 10:33:39 by mdesalle          #+#    #+#             */
-/*   Updated: 2020/12/30 10:42:54 by mdesalle         ###   ########.fr       */
+/*   Updated: 2020/12/31 09:02:39 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,14 @@
 
 int	main(void)
 {
-	ft_printf("% *.5i|\n", 4, 42);
-	printf("% *.5i|", 4, 42);
+	int	x;
+	int	y;
+
+	x = 0;
+	y = 0;
+	x = printf("%d\n", 123456789);
+	y = ft_printf("%d\n", 123456789);
+	printf("%d\n", x);
+	printf("%d\n", y);
 	return (0);
 }

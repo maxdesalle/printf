@@ -6,7 +6,7 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/23 11:01:30 by mdesalle          #+#    #+#             */
-/*   Updated: 2020/12/29 09:08:29 by mdesalle         ###   ########.fr       */
+/*   Updated: 2020/12/31 09:16:03 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	ft_p_craft(unsigned long long x, t_list *box)
 		ft_putchar(' ', box);
 	if (box->fdot == 1 && x == 0 && box->width == 0 && box->precision == 0)
 		return ;
-	if (!(basechar = malloc(sizeof(char) * (end))))
+	if (!(basechar = malloc(sizeof(char) * (end + 1))))
 		return ;
 	while (end >= 0)
 	{
