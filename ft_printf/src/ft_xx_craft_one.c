@@ -6,7 +6,7 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/20 10:02:42 by mdesalle          #+#    #+#             */
-/*   Updated: 2021/01/02 18:25:46 by mdesalle         ###   ########.fr       */
+/*   Updated: 2021/01/02 18:29:05 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,13 +64,11 @@ void	ft_xx_craft(int x, int type, t_list *box)
 {
 	int	len;
 	char	*base;
-	unsigned int	y;
 
-	len = ft_baselen((unsigned long)x);
-	y = (unsigned)x;
 	if (type == 0)
 		base = "0123456789abcdef";
 	else
 		base = "0123456789ABCDEF";
+	len = ft_baselen((unsigned long)x);
 	ft_hexa_calculator(len, x, base, box);
 }
