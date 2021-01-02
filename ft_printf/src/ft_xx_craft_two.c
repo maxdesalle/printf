@@ -6,7 +6,7 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/23 08:53:01 by mdesalle          #+#    #+#             */
-/*   Updated: 2021/01/02 15:03:12 by mdesalle         ###   ########.fr       */
+/*   Updated: 2021/01/02 17:33:42 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ void     ft_print_hexa_one(char *basechar, int x, t_list *box)
 		ft_putstr(" ", box);
 	else
 		ft_putstr(basechar, box);
-	free(basechar);
         return ;
 }
 
@@ -59,7 +58,6 @@ void     ft_print_hexa_two(char *basechar, int x, t_list *box)
                 ft_putstr(" ", box);
 	else
 		ft_putstr(basechar, box);
-	free(basechar);
         return ;
 }
 
@@ -82,6 +80,5 @@ void     ft_print_hexa_three(char *basechar, int x, t_list *box)
                 ft_putstr(" ", box);
 	else
 		ft_putstr(basechar, box);
-	free(basechar);
         return ;
 }

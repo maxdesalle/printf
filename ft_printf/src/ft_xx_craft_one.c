@@ -6,7 +6,7 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/20 10:02:42 by mdesalle          #+#    #+#             */
-/*   Updated: 2021/01/01 13:31:23 by mdesalle         ###   ########.fr       */
+/*   Updated: 2021/01/02 17:45:49 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,56 +31,48 @@ static void	ft_dispatcher(char *basechar, int x, t_list *box)
 		ft_putstr(basechar, box);
 }
 
-static void	ft_positive_hexa(int x, char *base, t_list *box)
+static void	ft_positive_hexa(int len, int x, char *base, t_list *box)
 {
-	int     end;
-	char    *basechar;
+	char    basechar[len + 1];
 
-	end = ft_baselen((unsigned)x) + 1;
-	if (!(basechar = malloc(sizeof(char) * (end + 1))))
-		return ;
-	basechar[end] = '\0';
-	end -= 1;
-	while (end >= 0)
+	basechar[len + 1] = '\0';
+	while (len >= 0)
 	{
-		basechar[end] = (base[(x % 16)]);
+		basechar[len] = (base[(x % 16)]);
 		x /= 16;
-		end -= 1;
+		len -= 1;
 	}
 	ft_dispatcher(basechar, x, box);
 }
 
-static void	ft_negative_hexa(unsigned int y, char *base, t_list *box)
+static void	ft_negative_hexa(int len, unsigned int y, char *base, t_list *box)
 {
-	int     end;
-	char    *basechar;
+	char    basechar[len + 1];
 
-	end = ft_baselen(y) + 1;
-	if (!(basechar = malloc(sizeof(char) * (end + 1))))
-		return ;
-	basechar[end] = '\0';
-	end -= 1;
-	while (end >= 0)
+	basechar[len + 1] = '\0';
+	while (len >= 0)
 	{
-		basechar[end] = (base[(y % 16)]);
+		basechar[len] = (base[(y % 16)]);
 		y /= 16;
-		end -= 1;
+		len -= 1;
 	}
 	ft_dispatcher(basechar, y, box);
 }
 
 void	ft_xx_craft(int x, int type, t_list *box)
 {
+	int	len;
 	char	*base;
 	unsigned int	y;
 
+	len = ft_baselen((unsigned long)x);
 	y = (unsigned)x;
 	if (type == 0)
 		base = "0123456789abcdef";
 	else if (type == 1)
 		base = "0123456789ABCDEF";
 	if (x >= 0)
-		ft_positive_hexa(x, base, box);
+		ft_positive_hexa(len, x, base, box);
 	else if (x < 0)
-		ft_negative_hexa(y, base, box);
+		ft_negative_hexa(len, y, base, box);
 }

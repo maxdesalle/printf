@@ -6,7 +6,7 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/23 11:01:30 by mdesalle          #+#    #+#             */
-/*   Updated: 2021/01/02 15:02:45 by mdesalle         ###   ########.fr       */
+/*   Updated: 2021/01/02 18:08:33 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,32 +35,34 @@ static void	ft_print_pointer(unsigned long long x, char *basechar, t_list *box)
 		ft_putstr(basechar, box);
 		return ;
 	}
-	free(basechar);
+}
+
+static void	ft_dispatcher(int len, char *base, unsigned long long x, t_list *box)
+{
+	char	basechar[len + 1];
+
+	basechar[len + 1] = '\0';
+	while (len >= 0)
+	{
+		basechar[len] = (base[(x % 16)]);
+		x /= 16;
+		len -= 1;
+	}
+	ft_print_pointer(x, basechar, box);
 }
 
 void	ft_p_craft(unsigned long long x, t_list *box)
 {
-	int	end;
+	int	len;
 	char	*base;
-	char	*basechar;
 
 	if (!x)
 		x = 0;
-	end = ft_baselen(x) + 1;
+	len = ft_baselen(x);
 	base = "0123456789abcdef";
 	if (box->fdot == 1 && box->width > 2 && !x)
 		ft_putchar(' ', box);
 	if (box->fdot == 1 && x == 0 && box->width == 0 && box->precision == 0)
 		return ;
-	if (!(basechar = malloc(sizeof(char) * (end + 1))))
-		return ;
-	basechar[end] = '\0';
-	end -= 1;
-	while (end >= 0)
-	{
-		basechar[end] = (base[(x % 16)]);
-		x /= 16;
-		end -= 1;
-	}
-	ft_print_pointer(x, basechar, box);
+	ft_dispatcher(len, base, x, box);
 }
