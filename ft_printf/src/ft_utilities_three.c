@@ -6,7 +6,7 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/18 11:34:12 by mdesalle          #+#    #+#             */
-/*   Updated: 2020/12/31 14:51:55 by mdesalle         ###   ########.fr       */
+/*   Updated: 2021/01/01 13:19:10 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int	ft_baselen(unsigned long x)
 	int y;
 
 	y = 0;
-	while ((x = x / 16) > 0)
+	while ((x /= 16) > 0)
 		y++;
 	return (y);
 }
