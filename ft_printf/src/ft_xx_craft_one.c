@@ -6,7 +6,7 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/20 10:02:42 by mdesalle          #+#    #+#             */
-/*   Updated: 2021/01/02 18:29:05 by mdesalle         ###   ########.fr       */
+/*   Updated: 2021/01/03 09:23:43 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 /* printing of hexadecimal numbers */
 
-static void	ft_dispatcher(char *basechar, int x, t_list *box)
+static void	ft_dispatcher(char *basechar, long x, t_list *box)
 {
 	if (box->width > 1 && box->precision >= 1 && (size_t)box->precision >= ft_strlen(basechar))
 		ft_print_hexa_one(basechar, x, box);
@@ -31,7 +31,7 @@ static void	ft_dispatcher(char *basechar, int x, t_list *box)
 		ft_putstr(basechar, box);
 }
 
-static void	ft_hexa_calculator(int len, int x, char *base, t_list *box)
+static void	ft_hexa_calculator(int len, long x, char *base, t_list *box)
 {
 	unsigned int	y;
 	char	basechar[len + 1];
@@ -60,7 +60,7 @@ static void	ft_hexa_calculator(int len, int x, char *base, t_list *box)
 	}
 }
 
-void	ft_xx_craft(int x, int type, t_list *box)
+void	ft_xx_craft(long x, int type, t_list *box)
 {
 	int	len;
 	char	*base;
@@ -69,6 +69,6 @@ void	ft_xx_craft(int x, int type, t_list *box)
 		base = "0123456789abcdef";
 	else
 		base = "0123456789ABCDEF";
-	len = ft_baselen((unsigned long)x);
+	len = ft_baselen((unsigned)x);
 	ft_hexa_calculator(len, x, base, box);
 }

@@ -6,7 +6,7 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/23 08:53:01 by mdesalle          #+#    #+#             */
-/*   Updated: 2021/01/02 17:33:42 by mdesalle         ###   ########.fr       */
+/*   Updated: 2021/01/03 09:20:02 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 /* printing of hexadecimal numbers */
 
-void     ft_print_hexa_one(char *basechar, int x, t_list *box)
+void     ft_print_hexa_one(char *basechar, long x, t_list *box)
 {
         if (box->fminus == 1)
         {
@@ -38,7 +38,7 @@ void     ft_print_hexa_one(char *basechar, int x, t_list *box)
         return ;
 }
 
-void     ft_print_hexa_two(char *basechar, int x, t_list *box)
+void     ft_print_hexa_two(char *basechar, long x, t_list *box)
 {
         if (box->fminus == 1)
         {
@@ -61,7 +61,7 @@ void     ft_print_hexa_two(char *basechar, int x, t_list *box)
         return ;
 }
 
-void     ft_print_hexa_three(char *basechar, int x, t_list *box)
+void     ft_print_hexa_three(char *basechar, long x, t_list *box)
 {
         if (box->fminus == 1)
         {

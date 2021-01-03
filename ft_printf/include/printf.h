@@ -6,7 +6,7 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 09:02:17 by mdesalle          #+#    #+#             */
-/*   Updated: 2021/01/02 18:09:24 by mdesalle         ###   ########.fr       */
+/*   Updated: 2021/01/03 09:20:29 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,12 +52,12 @@ void			ft_di_craft(int nbr, t_list *box);
 void			ft_u_craft(unsigned int nbr, t_list *box);
 
 /* ft_xx_craft_one.c */
-void			ft_xx_craft(int x, int type, t_list *box);
+void			ft_xx_craft(long x, int type, t_list *box);
 
 /* ft_xx_craft_two.c */
-void			ft_print_hexa_one(char *basechar, int x, t_list *box);
-void			ft_print_hexa_two(char *basechar, int x, t_list *box);
-void			ft_print_hexa_three(char *basechar, int x, t_list *box);
+void			ft_print_hexa_one(char *basechar, long x, t_list *box);
+void			ft_print_hexa_two(char *basechar, long x, t_list *box);
+void			ft_print_hexa_three(char *basechar, long x, t_list *box);
 
 /* ft_p_craft.c */
 void			ft_p_craft(unsigned long long x, t_list *box);
