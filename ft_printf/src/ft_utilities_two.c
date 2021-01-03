@@ -6,7 +6,7 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/15 11:04:09 by mdesalle          #+#    #+#             */
-/*   Updated: 2020/12/28 10:56:08 by mdesalle         ###   ########.fr       */
+/*   Updated: 2021/01/03 11:01:23 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,6 @@ void	ft_putnbr(int n, t_list *box)
 	{
 		ft_putchar('-', box);
 		x *= -1;
-		box->len += 1;
 	}
 	if (x > 9)
 	{

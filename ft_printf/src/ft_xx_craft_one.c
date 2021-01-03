@@ -6,7 +6,7 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/20 10:02:42 by mdesalle          #+#    #+#             */
-/*   Updated: 2021/01/03 09:23:43 by mdesalle         ###   ########.fr       */
+/*   Updated: 2021/01/03 10:46:07 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static void	ft_dispatcher(char *basechar, long x, t_list *box)
 	else if (box->width > 1 && box->precision < 1)
 		ft_print_hexa_three(basechar, x, box);
 	else
-		ft_putstr(basechar, box);
+		ft_putstr_hexa(basechar, box);
 }
 
 static void	ft_hexa_calculator(int len, long x, char *base, t_list *box)
