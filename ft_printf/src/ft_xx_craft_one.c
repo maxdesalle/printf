@@ -6,7 +6,7 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/20 10:02:42 by mdesalle          #+#    #+#             */
-/*   Updated: 2021/01/03 10:46:07 by mdesalle         ###   ########.fr       */
+/*   Updated: 2021/01/04 13:51:46 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,19 +16,19 @@
 
 static void	ft_dispatcher(char *basechar, long x, t_list *box)
 {
-	if (box->width > 1 && box->precision >= 1 && (size_t)box->precision >= ft_strlen(basechar))
+	if (box->width >= 1 && box->precision >= 1 && (size_t)box->precision >= ft_strlen(basechar))
 		ft_print_hexa_one(basechar, x, box);
-	else if (box->width > 1 && box->precision >= 1 && (size_t)box->precision < ft_strlen(basechar))
+	else if (box->width >= 1 && box->precision >= 1 && (size_t)box->precision < ft_strlen(basechar))
 		ft_print_hexa_two(basechar, x, box);
 	else if (box->width < 1 && box->precision >= 1)
 	{
 		ft_super_putchar(box->precision - ft_strlen(basechar), '0', box);
 		ft_putstr(basechar, box);
 	}
-	else if (box->width > 1 && box->precision < 1)
+	else if (box->width >= 1 && box->precision < 1)
 		ft_print_hexa_three(basechar, x, box);
 	else
-		ft_putstr_hexa(basechar, box);
+		ft_putstr_hexa(basechar, x, box);
 }
 
 static void	ft_hexa_calculator(int len, long x, char *base, t_list *box)

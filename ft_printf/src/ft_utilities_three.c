@@ -6,7 +6,7 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/18 11:34:12 by mdesalle          #+#    #+#             */
-/*   Updated: 2021/01/03 10:47:45 by mdesalle         ###   ########.fr       */
+/*   Updated: 2021/01/04 10:36:56 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,10 @@ int	ft_baselen(unsigned long x)
 	return (y);
 }
 
-void    ft_putstr_hexa(char *str, t_list *box)
+void    ft_putstr_hexa(char *str, long x, t_list *box)
 {
+	if (box->width == 0 && box->fdot == 1 && box->precision == 0 && x == 0)
+		return ;
         while (*str != '\0')
         {
                 write(1, str++, 1);
