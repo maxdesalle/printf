@@ -6,7 +6,7 @@
 #    By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/04 16:09:49 by mdesalle          #+#    #+#              #
-#    Updated: 2021/01/04 11:58:12 by mdesalle         ###   ########.fr        #
+#    Updated: 2021/01/06 15:47:29 by mdesalle         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,13 +23,13 @@ SRC = src/ft_c_craft.c \
       src/ft_utilities_one.c \
       src/ft_utilities_two.c \
       src/ft_utilities_three.c \
-      src/ft_s_craft.c \
       src/ft_di_craft.c \
       src/ft_u_craft.c \
       src/ft_xx_craft_one.c \
       src/ft_xx_craft_two.c \
       src/ft_p_craft.c \
-      src/ft_percent_craft.c
+      src/ft_percent_craft.c \
+      src/ft_s_craft.c
 
 OBJ = $(SRC:.c=.o)
 

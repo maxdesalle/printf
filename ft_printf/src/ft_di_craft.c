@@ -6,7 +6,7 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/15 10:34:39 by mdesalle          #+#    #+#             */
-/*   Updated: 2021/01/04 14:28:18 by mdesalle         ###   ########.fr       */
+/*   Updated: 2021/01/06 19:07:36 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ static void	ft_print_int_three(int nbr, t_list *box)
 	}
 	else if (box->fzero == 1)
 	{
-		if (nbr < 0)
+		if (nbr < 0 && nbr > -2147483648)
 		{
 			ft_putchar('-', box);
 			nbr *= -1;
