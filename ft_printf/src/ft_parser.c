@@ -6,7 +6,7 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 11:24:47 by mdesalle          #+#    #+#             */
-/*   Updated: 2021/01/07 11:49:47 by mdesalle         ###   ########.fr       */
+/*   Updated: 2021/01/07 15:22:25 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,24 @@ static void	ft_type_selector(va_list *argptr, t_list *box)
 		ft_craft2(argptr, box);
 }
 
+static int	ft_type_finder(int i, char *str, t_list *box)
+{
+	int	j;
+
+	j = i;
+	while (ft_strchr("cspdiuxXnfge%", str[i]) == NULL)
+		i++;
+	if (ft_strchr("cspdiuxX%", str[i]))
+	{
+		box->type = str[i];
+		return (i);
+	}
+	else if (ft_strchr("nfge", str[i]))
+		return (i);
+	else
+		return (0);
+}
+
 void		ft_parser(va_list *argptr, char *str, t_list *box)
 {
 	int	i;
@@ -57,13 +75,8 @@ void		ft_parser(va_list *argptr, char *str, t_list *box)
 		if (str[i] == '%' && str[i + 1] != '%')
 		{
 			ft_analysis(argptr, &str[++i], box);
-			while (ft_strchr("cspdiuxXnfge%", str[i]) == NULL)
-				i++;
-			if (ft_strchr("cspdiuxX%", str[i]))
-				box->type = str[i];
-			else
-				break;
-			ft_type_selector(argptr, box);
+			if ((i = ft_type_finder(i, str, box)) != 0)
+				ft_type_selector(argptr, box);
 		}
 		else if (str[i] == '%' && str[i + 1] == '%')
 			ft_putchar(str[++i], box);
