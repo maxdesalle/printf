@@ -6,7 +6,7 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/15 10:34:39 by mdesalle          #+#    #+#             */
-/*   Updated: 2021/01/06 19:07:36 by mdesalle         ###   ########.fr       */
+/*   Updated: 2021/01/07 09:57:09 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,9 @@ static void	ft_print_int_three(int nbr, t_list *box)
 {
 	if (box->fminus == 1)
 	{
-		ft_putnbr(nbr, box);
+		if (!(box->fzero == 1 && box->precision == 0
+				&& box->fdot == 1 && nbr == 0))
+			ft_putnbr(nbr, box);
 		if (box->fdot == 1 && nbr == 0)
 			ft_super_putchar(box->width, ' ', box);
 		else
@@ -73,16 +75,21 @@ static void	ft_print_int_three(int nbr, t_list *box)
 	}
 	else if (box->fzero == 1)
 	{
-		if (nbr < 0 && nbr > -2147483648)
+		if (box->precision == 0 && box->fdot == 1)
+			ft_super_putchar(box->width - ft_intlen(nbr), ' ', box);
+		else
 		{
-			ft_putchar('-', box);
-			nbr *= -1;
-			box->width -= 1;
+			if (nbr < 0 && nbr > -2147483648)
+			{
+				ft_putchar('-', box);
+				nbr *= -1;
+				box->width -= 1;
+			}
+			ft_super_putchar(box->width - ft_intlen(nbr), '0', box);
 		}
-		ft_super_putchar(box->width - ft_intlen(nbr), '0', box);
 	}
 	else if (box->fminus == 0 && box->fdot == 1 && nbr == 0)
-			ft_super_putchar(box->width, ' ', box);
+		ft_super_putchar(box->width, ' ', box);
 	else
 		ft_super_putchar(box->width - ft_intlen(nbr), ' ', box);
 	ft_putnbr(nbr, box);

@@ -6,7 +6,7 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/16 16:43:43 by mdesalle          #+#    #+#             */
-/*   Updated: 2021/01/04 14:25:09 by mdesalle         ###   ########.fr       */
+/*   Updated: 2021/01/07 10:09:57 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,9 @@ static void	ft_print_uint_three(unsigned int nbr, t_list *box)
 {
 	if (box->fminus == 1)
 	{
-		ft_putnbr_unsigned(nbr, box);
+		if (!(box->fzero == 1 && box->precision == 0
+				&& box->fdot == 1 && nbr == 0))
+			ft_putnbr_unsigned(nbr, box);
 		if (box->fdot == 1 && nbr == 0)
 			ft_super_putchar(box->width, ' ', box);
 		else
@@ -61,7 +63,12 @@ static void	ft_print_uint_three(unsigned int nbr, t_list *box)
 		return ;
 	}
 	else if (box->fzero == 1)
-		ft_super_putchar(box->width - ft_uintlen(nbr), '0', box);
+	{
+		if (box->precision == 0 && box->fdot == 1)
+			ft_super_putchar(box->width - ft_intlen(nbr), ' ', box);
+		else 
+			ft_super_putchar(box->width - ft_uintlen(nbr), '0', box);
+	}
 	else if (box->fminus == 0 && box->fdot == 1 && nbr == 0)
 		ft_super_putchar(box->width, ' ', box);
 	else
