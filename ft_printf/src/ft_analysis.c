@@ -6,7 +6,7 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 08:51:16 by mdesalle          #+#    #+#             */
-/*   Updated: 2021/01/09 11:00:17 by mdesalle         ###   ########.fr       */
+/*   Updated: 2021/01/09 14:52:39 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,8 @@ static void	ft_precision(va_list *argptr, char *str, t_list *box)
 
 static void	ft_width(va_list *argptr, char *str, t_list *box)
 {
-	while (*str != '\0' && *str != '.' && *str != '%')
+	while (*str != '\0' && *str != '.' && *str != '%' &&
+			ft_strchr("cspdiuxXnfge%", *str) == NULL)
 	{
 		if (*str >= '1' && *str <= '9')
 		{
@@ -88,9 +89,7 @@ static void	ft_width(va_list *argptr, char *str, t_list *box)
 
 static void	ft_flag(char *str, t_list *box)
 {
-	while (*str != '\0' && *str != 'c' && *str != 's' && *str != 'p'
-			&& *str != 'd' && *str != 'i' && *str != 'u'
-			&& *str != 'x' && *str != 'X' && *str != '%')
+	while (*str != '\0' && ft_strchr("cspdiuxXnfge%", *str) == NULL)
 	{
 		if (*str == '-')
 			box->fminus += 1;
@@ -121,7 +120,8 @@ static void	ft_flag(char *str, t_list *box)
 static void	ft_fzero(char *str, t_list *box)
 {
 	while (*str != '\0' && *str != '*' && *str != '%'
-			&& *str != '.' && (!(*str >= '1' && *str <= '9')))
+			&& *str != '.' && (!(*str >= '1' && *str <= '9'))
+			&& ft_strchr("cspdiuxXnfge%", *str) == NULL)
 		if (*str++ == '0')
 			box->fzero += 1;
 	return ;
