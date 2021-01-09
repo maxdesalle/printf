@@ -6,7 +6,7 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 11:24:47 by mdesalle          #+#    #+#             */
-/*   Updated: 2021/01/07 15:22:25 by mdesalle         ###   ########.fr       */
+/*   Updated: 2021/01/09 11:53:04 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,9 +49,6 @@ static void	ft_type_selector(va_list *argptr, t_list *box)
 
 static int	ft_type_finder(int i, char *str, t_list *box)
 {
-	int	j;
-
-	j = i;
 	while (ft_strchr("cspdiuxXnfge%", str[i]) == NULL)
 		i++;
 	if (ft_strchr("cspdiuxX%", str[i]))
@@ -72,11 +69,18 @@ void		ft_parser(va_list *argptr, char *str, t_list *box)
 	i = 0;
 	while (str[i] != '\0')
 	{
-		if (str[i] == '%' && str[i + 1] != '%')
+		if (str[i] == '*' && str[i + 1] == '*')
+		{
+			ft_putstr("**", box);
+			i += 2;
+		}
+		else if (str[i] == '%' && str[i + 1] != '%')
 		{
 			ft_analysis(argptr, &str[++i], box);
-			if ((i = ft_type_finder(i, str, box)) != 0)
+			if ((i = ft_type_finder(i, str, box)) > 0)
 				ft_type_selector(argptr, box);
+			else
+				return ;
 		}
 		else if (str[i] == '%' && str[i + 1] == '%')
 			ft_putchar(str[++i], box);

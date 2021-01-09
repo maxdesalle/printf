@@ -6,7 +6,7 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 08:51:16 by mdesalle          #+#    #+#             */
-/*   Updated: 2021/01/07 15:22:48 by mdesalle         ###   ########.fr       */
+/*   Updated: 2021/01/09 11:00:17 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,8 +102,8 @@ static void	ft_flag(char *str, t_list *box)
 			box->fdot += 1;
 		str++;
 	}
-	if (box->fminus == 2)
-		box->fminus -= 1;
+	if (box->fminus > 1)
+		box->fminus = 1;
 	if (box->precision < 0)
 	{
 		box->precision = 0;
