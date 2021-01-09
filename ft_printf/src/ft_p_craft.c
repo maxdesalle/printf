@@ -6,15 +6,18 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/23 11:01:30 by mdesalle          #+#    #+#             */
-/*   Updated: 2021/01/05 10:05:37 by mdesalle         ###   ########.fr       */
+/*   Updated: 2021/01/09 15:11:16 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/printf.h"
 
-/* prints pointers */
+/*
+** prints pointers
+*/
 
-static void	ft_print_pointer(unsigned long long x, char *basechar, t_list *box)
+static void	ft_print_pointer(unsigned long long x,
+		char *basechar, t_list *box)
 {
 	if (box->fdot == 1 && box->width < 0 && x == 0)
 	{
@@ -38,7 +41,8 @@ static void	ft_print_pointer(unsigned long long x, char *basechar, t_list *box)
 	}
 }
 
-static void	ft_dispatcher(int len, char *base, unsigned long long x, t_list *box)
+static void	ft_dispatcher(int len, char *base,
+		unsigned long long x, t_list *box)
 {
 	char	basechar[len + 1];
 
@@ -52,9 +56,9 @@ static void	ft_dispatcher(int len, char *base, unsigned long long x, t_list *box
 	ft_print_pointer(x, basechar, box);
 }
 
-void	ft_p_craft(unsigned long long x, t_list *box)
+void		ft_p_craft(unsigned long long x, t_list *box)
 {
-	int	len;
+	int		len;
 	char	*base;
 
 	if (!x)

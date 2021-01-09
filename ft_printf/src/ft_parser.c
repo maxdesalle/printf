@@ -6,13 +6,15 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 11:24:47 by mdesalle          #+#    #+#             */
-/*   Updated: 2021/01/09 12:25:37 by mdesalle         ###   ########.fr       */
+/*   Updated: 2021/01/09 15:15:40 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/printf.h"
 
-/* parses the string given as parameter and redirects to the right type */
+/*
+** parses the string given as parameter and redirects to the right type
+*/
 
 static void	ft_craft1(va_list *argptr, t_list *box)
 {

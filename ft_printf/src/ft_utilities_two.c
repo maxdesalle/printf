@@ -6,13 +6,15 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/15 11:04:09 by mdesalle          #+#    #+#             */
-/*   Updated: 2021/01/07 09:37:40 by mdesalle         ###   ########.fr       */
+/*   Updated: 2021/01/09 15:31:12 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/printf.h"
 
-/* ft_strlen and its alternatives for ints and unsigned ints, and putnbr */
+/*
+** ft_strlen and its alternatives for ints and unsigned ints, and putnbr
+*/
 
 size_t	ft_intlen(long x)
 {
@@ -72,7 +74,7 @@ size_t	ft_strlen(const char *s)
 
 size_t	ft_uintlen(unsigned int nbr)
 {
-	int	len;
+	int				len;
 	unsigned long	tmp;
 
 	len = 0;

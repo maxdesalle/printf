@@ -6,16 +6,18 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 08:51:16 by mdesalle          #+#    #+#             */
-/*   Updated: 2021/01/09 14:52:39 by mdesalle         ###   ########.fr       */
+/*   Updated: 2021/01/09 15:05:18 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/printf.h"
 
-/* catches the flags given in the string as parameter and stores them inside a linked list (box) */
+/*
+** catches the flags given in the string as parameter
+** and stores them inside a linked list (box)
+*/
 
-
-/* 
+/*
 ** As long as we aren't at the end of the string, if a dot (".") is found,
 ** we convert the following character(s) in an int which is stored inside
 ** the precision int inside the box linked list. If a star ("*") is found,
@@ -24,7 +26,7 @@
 
 static void	ft_precision(va_list *argptr, char *str, t_list *box)
 {
-	while (*str != '\0' && *str != '%')
+	while (*str != '\0' && ft_strchr("cspdiuxXnfge%", *str) == NULL)
 	{
 		if (*str == '.')
 		{
@@ -39,7 +41,6 @@ static void	ft_precision(va_list *argptr, char *str, t_list *box)
 	}
 	return ;
 }
-
 
 /*
 ** As long as the string hasn't reached its end, or a dot (".") (signaling
@@ -76,7 +77,6 @@ static void	ft_width(va_list *argptr, char *str, t_list *box)
 	return ;
 }
 
-
 /*
 ** As long as the string hasn't reached its end, and one of the types
 ** hasn't been found, every time a flag is found its counter increases.
@@ -111,7 +111,6 @@ static void	ft_flag(char *str, t_list *box)
 	return ;
 }
 
-
 /*
 ** As long as the string hasn't reached its end, nor the width, if a 0
 ** is found, the counter increases.
@@ -126,7 +125,6 @@ static void	ft_fzero(char *str, t_list *box)
 			box->fzero += 1;
 	return ;
 }
-
 
 /*
 ** Initializes all the flags and calls the functions.

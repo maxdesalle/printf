@@ -6,13 +6,15 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/18 11:34:12 by mdesalle          #+#    #+#             */
-/*   Updated: 2021/01/09 11:13:07 by mdesalle         ###   ########.fr       */
+/*   Updated: 2021/01/09 15:19:52 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/printf.h"
 
-/* a ft_strlen for base numbers and putnbr for unsigned numbers */
+/*
+** a ft_strlen for base numbers and putnbr for unsigned numbers
+*/
 
 void	ft_putnbr_unsigned(unsigned int nbr, t_list *box)
 {
@@ -36,7 +38,7 @@ void	ft_putnbr_unsigned(unsigned int nbr, t_list *box)
 		ft_putchar(x + '0', box);
 }
 
-int	ft_baselen(unsigned long x)
+int		ft_baselen(unsigned long x)
 {
 	int y;
 
@@ -46,13 +48,13 @@ int	ft_baselen(unsigned long x)
 	return (y);
 }
 
-void    ft_putstr_hexa(char *str, long x, t_list *box)
+void	ft_putstr_hexa(char *str, long x, t_list *box)
 {
 	if (box->width == 0 && box->fdot == 1 && box->precision == 0 && x == 0)
 		return ;
-        while (*str != '\0')
-        {
-                write(1, str++, 1);
-                box->len += 1;
-        }
+	while (*str != '\0')
+	{
+		write(1, str++, 1);
+		box->len += 1;
+	}
 }

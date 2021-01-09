@@ -6,13 +6,15 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/07 08:11:17 by mdesalle          #+#    #+#             */
-/*   Updated: 2021/01/05 14:20:27 by mdesalle         ###   ########.fr       */
+/*   Updated: 2021/01/09 15:17:56 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/printf.h"
 
-/* print strings */
+/*
+** print strings
+*/
 
 static void	ft_print_string_one(char *str, t_list *box)
 {
@@ -30,12 +32,14 @@ static void	ft_print_string_one(char *str, t_list *box)
 
 static void	ft_print_string_two(char *str, t_list *box)
 {
-	if (box->width > box->precision && (size_t)box->precision <= ft_strlen(str))
+	if (box->width > box->precision
+			&& (size_t)box->precision <= ft_strlen(str))
 	{
 		ft_super_putchar(box->width - box->precision, ' ', box);
 		ft_putstr_precision(str, box);
 	}
-	else if (box->width <= box->precision && (size_t)box->precision <= ft_strlen(str))
+	else if (box->width <= box->precision
+			&& (size_t)box->precision <= ft_strlen(str))
 		ft_putstr_precision(str, box);
 	else if ((size_t)box->precision > ft_strlen(str))
 	{
@@ -47,24 +51,26 @@ static void	ft_print_string_two(char *str, t_list *box)
 
 static void	ft_print_string_three(char *str, t_list *box)
 {
-        if (box->width > box->precision && (size_t)box->precision <= ft_strlen(str))
-        {
-                ft_putstr_precision(str, box);
+	if (box->width > box->precision
+			&& (size_t)box->precision <= ft_strlen(str))
+	{
+		ft_putstr_precision(str, box);
 		ft_super_putchar(box->width - box->precision, ' ', box);
-        }
-	else if (box->width < box->precision && (size_t)box->precision <= ft_strlen(str))
-                ft_putstr_precision(str, box);
-        else if ((size_t)box->precision > ft_strlen(str))
-        {
-                ft_putstr(str, box);
+	}
+	else if (box->width < box->precision
+			&& (size_t)box->precision <= ft_strlen(str))
+		ft_putstr_precision(str, box);
+	else if ((size_t)box->precision > ft_strlen(str))
+	{
+		ft_putstr(str, box);
 		ft_super_putchar(box->width - ft_strlen(str), ' ', box);
-        }
+	}
 	else
 		ft_putstr_precision(str, box);
-        return ;
+	return ;
 }
 
-void	ft_s_craft(char *str, t_list *box)
+void		ft_s_craft(char *str, t_list *box)
 {
 	if (!str)
 		str = "(null)";

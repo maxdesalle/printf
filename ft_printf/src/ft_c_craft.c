@@ -6,13 +6,15 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/05 13:20:17 by mdesalle          #+#    #+#             */
-/*   Updated: 2020/12/28 07:44:19 by mdesalle         ###   ########.fr       */
+/*   Updated: 2021/01/09 15:15:11 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/printf.h"
 
-/* prints chars */
+/*
+** prints chars
+*/
 
 static void	ft_print_char(char c, t_list *box)
 {
@@ -30,7 +32,7 @@ static void	ft_print_char(char c, t_list *box)
 	return ;
 }
 
-void	ft_c_craft(char c, t_list *box)
+void		ft_c_craft(char c, t_list *box)
 {
 	if (box->width > 1)
 		ft_print_char(c, box);

@@ -6,19 +6,23 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/20 10:02:42 by mdesalle          #+#    #+#             */
-/*   Updated: 2021/01/04 13:51:46 by mdesalle         ###   ########.fr       */
+/*   Updated: 2021/01/09 15:14:14 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/printf.h"
 
-/* printing of hexadecimal numbers */
+/*
+** printing of hexadecimal numbers
+*/
 
 static void	ft_dispatcher(char *basechar, long x, t_list *box)
 {
-	if (box->width >= 1 && box->precision >= 1 && (size_t)box->precision >= ft_strlen(basechar))
+	if (box->width >= 1 && box->precision >= 1
+			&& (size_t)box->precision >= ft_strlen(basechar))
 		ft_print_hexa_one(basechar, x, box);
-	else if (box->width >= 1 && box->precision >= 1 && (size_t)box->precision < ft_strlen(basechar))
+	else if (box->width >= 1 && box->precision >= 1
+			&& (size_t)box->precision < ft_strlen(basechar))
 		ft_print_hexa_two(basechar, x, box);
 	else if (box->width < 1 && box->precision >= 1)
 	{
@@ -34,7 +38,7 @@ static void	ft_dispatcher(char *basechar, long x, t_list *box)
 static void	ft_hexa_calculator(int len, long x, char *base, t_list *box)
 {
 	unsigned int	y;
-	char	basechar[len + 1];
+	char			basechar[len + 1];
 
 	y = (unsigned)x;
 	basechar[len + 1] = '\0';
@@ -60,9 +64,9 @@ static void	ft_hexa_calculator(int len, long x, char *base, t_list *box)
 	}
 }
 
-void	ft_xx_craft(long x, int type, t_list *box)
+void		ft_xx_craft(long x, int type, t_list *box)
 {
-	int	len;
+	int		len;
 	char	*base;
 
 	if (type == 0)

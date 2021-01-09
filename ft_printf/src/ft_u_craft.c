@@ -6,13 +6,15 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/16 16:43:43 by mdesalle          #+#    #+#             */
-/*   Updated: 2021/01/07 10:09:57 by mdesalle         ###   ########.fr       */
+/*   Updated: 2021/01/09 15:30:06 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/printf.h"
 
-/* prints unsigned ints */
+/*
+** prints unsigned ints
+*/
 
 static void	ft_print_uint_one(unsigned int nbr, t_list *box)
 {
@@ -66,7 +68,7 @@ static void	ft_print_uint_three(unsigned int nbr, t_list *box)
 	{
 		if (box->precision == 0 && box->fdot == 1)
 			ft_super_putchar(box->width - ft_intlen(nbr), ' ', box);
-		else 
+		else
 			ft_super_putchar(box->width - ft_uintlen(nbr), '0', box);
 	}
 	else if (box->fminus == 0 && box->fdot == 1 && nbr == 0)
@@ -77,11 +79,13 @@ static void	ft_print_uint_three(unsigned int nbr, t_list *box)
 	return ;
 }
 
-void	ft_u_craft(unsigned int nbr, t_list *box)
+void		ft_u_craft(unsigned int nbr, t_list *box)
 {
-	if (box->width >= 1 && box->precision >= 1 && (size_t)box->precision >= ft_uintlen(nbr))
+	if (box->width >= 1 && box->precision >= 1
+			&& (size_t)box->precision >= ft_uintlen(nbr))
 		ft_print_uint_one(nbr, box);
-	else if (box->width >= 1 && box->precision >= 1 && (size_t)box->precision < ft_uintlen(nbr))
+	else if (box->width >= 1 && box->precision >= 1
+			&& (size_t)box->precision < ft_uintlen(nbr))
 		ft_print_uint_two(nbr, box);
 	else if (box->width < 1 && box->precision >= 1)
 	{

@@ -6,13 +6,15 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/04 16:28:10 by mdesalle          #+#    #+#             */
-/*   Updated: 2021/01/04 09:56:07 by mdesalle         ###   ########.fr       */
+/*   Updated: 2021/01/09 15:12:35 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/printf.h"
 
-/* some basic functions to print and a modified atoi */
+/*
+** some basic functions to print and a modified atoi
+*/
 
 void	ft_putchar(char c, t_list *box)
 {
@@ -41,7 +43,7 @@ void	ft_putstr_precision(char *str, t_list *box)
 		write(1, str++, 1);
 		box->len += 1;
 	}
-}	
+}
 
 void	ft_super_putchar(int len, char c, t_list *box)
 {
