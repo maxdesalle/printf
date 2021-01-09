@@ -6,7 +6,7 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/23 11:01:30 by mdesalle          #+#    #+#             */
-/*   Updated: 2021/01/09 15:11:16 by mdesalle         ###   ########.fr       */
+/*   Updated: 2021/01/09 18:25:31 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,10 @@
 
 /*
 ** prints pointers
+*/
+
+/*
+** prints according to each possibility
 */
 
 static void	ft_print_pointer(unsigned long long x,
@@ -41,6 +45,10 @@ static void	ft_print_pointer(unsigned long long x,
 	}
 }
 
+/*
+** converts the number in a base-16 string
+*/
+
 static void	ft_dispatcher(int len, char *base,
 		unsigned long long x, t_list *box)
 {
@@ -55,6 +63,10 @@ static void	ft_dispatcher(int len, char *base,
 	}
 	ft_print_pointer(x, basechar, box);
 }
+
+/*
+** main function. creates the base and calculates the length of the number
+*/
 
 void		ft_p_craft(unsigned long long x, t_list *box)
 {

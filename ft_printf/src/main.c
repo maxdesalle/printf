@@ -6,7 +6,7 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/10 10:33:39 by mdesalle          #+#    #+#             */
-/*   Updated: 2021/01/09 15:32:02 by mdesalle         ###   ########.fr       */
+/*   Updated: 2021/01/09 18:57:59 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,6 @@
 
 int	main(void)
 {
-	ft_printf("%s", "This project is awesome!");
+	ft_printf("%s\n", "This project is awesome!");
 	return (0);
 }

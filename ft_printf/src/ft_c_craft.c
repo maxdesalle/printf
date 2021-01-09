@@ -6,7 +6,7 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/05 13:20:17 by mdesalle          #+#    #+#             */
-/*   Updated: 2021/01/09 15:15:11 by mdesalle         ###   ########.fr       */
+/*   Updated: 2021/01/09 19:04:56 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,10 @@
 
 /*
 ** prints chars
+*/
+
+/*
+** prints the char according to a set of given possibilities
 */
 
 static void	ft_print_char(char c, t_list *box)
@@ -31,6 +35,12 @@ static void	ft_print_char(char c, t_list *box)
 	ft_putchar(c, box);
 	return ;
 }
+
+/*
+** main function. if the width is 0, it can directly be printed.
+** otherwise, it needs to go through the ft_print_char function
+** to be formatted properly
+*/
 
 void		ft_c_craft(char c, t_list *box)
 {

@@ -6,7 +6,7 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/07 08:11:17 by mdesalle          #+#    #+#             */
-/*   Updated: 2021/01/09 15:17:56 by mdesalle         ###   ########.fr       */
+/*   Updated: 2021/01/09 19:06:59 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,10 @@
 
 /*
 ** print strings
+*/
+
+/*
+** prints the string according to a set of given possibilities
 */
 
 static void	ft_print_string_one(char *str, t_list *box)
@@ -29,6 +33,10 @@ static void	ft_print_string_one(char *str, t_list *box)
 	ft_putstr(str, box);
 	return ;
 }
+
+/*
+** prints the string according to a set of given possibilities
+*/
 
 static void	ft_print_string_two(char *str, t_list *box)
 {
@@ -48,6 +56,10 @@ static void	ft_print_string_two(char *str, t_list *box)
 	}
 	return ;
 }
+
+/*
+** prints the string according to a set of given possibilities
+*/
 
 static void	ft_print_string_three(char *str, t_list *box)
 {
@@ -69,6 +81,13 @@ static void	ft_print_string_three(char *str, t_list *box)
 		ft_putstr_precision(str, box);
 	return ;
 }
+
+/*
+** if the string is null, following the workings of the printf function,
+** the string becomes "(null)" and the function moves on. it redirects
+** to the right functions according to a set of given possibilities.
+** if none of these possibilities is met, it simply prints it with ft_putstr.
+*/
 
 void		ft_s_craft(char *str, t_list *box)
 {

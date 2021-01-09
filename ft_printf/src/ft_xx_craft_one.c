@@ -6,7 +6,7 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/20 10:02:42 by mdesalle          #+#    #+#             */
-/*   Updated: 2021/01/09 15:14:14 by mdesalle         ###   ########.fr       */
+/*   Updated: 2021/01/09 18:40:19 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,10 @@
 
 /*
 ** printing of hexadecimal numbers
+*/
+
+/*
+** redirects towards the right functions according to the given possibilities
 */
 
 static void	ft_dispatcher(char *basechar, long x, t_list *box)
@@ -34,6 +38,10 @@ static void	ft_dispatcher(char *basechar, long x, t_list *box)
 	else
 		ft_putstr_hexa(basechar, x, box);
 }
+
+/*
+** converts the number in a base-16 string
+*/
 
 static void	ft_hexa_calculator(int len, long x, char *base, t_list *box)
 {
@@ -63,6 +71,11 @@ static void	ft_hexa_calculator(int len, long x, char *base, t_list *box)
 		ft_dispatcher(basechar, y, box);
 	}
 }
+
+/*
+** creates the base according to the given type (x or X), counts the lenght with
+** ft_baselen and calls the base-16 converter function
+*/
 
 void		ft_xx_craft(long x, int type, t_list *box)
 {

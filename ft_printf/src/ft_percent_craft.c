@@ -6,7 +6,7 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/28 13:23:55 by mdesalle          #+#    #+#             */
-/*   Updated: 2021/01/09 15:28:14 by mdesalle         ###   ########.fr       */
+/*   Updated: 2021/01/09 18:55:25 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,10 @@
 
 /*
 ** prints %
+*/
+
+/*
+** prints '%' according to a set of given possibilities
 */
 
 void	ft_percent_craft(t_list *box)

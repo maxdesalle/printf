@@ -6,7 +6,7 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 11:24:47 by mdesalle          #+#    #+#             */
-/*   Updated: 2021/01/09 15:15:40 by mdesalle         ###   ########.fr       */
+/*   Updated: 2021/01/09 18:47:34 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,10 @@
 
 /*
 ** parses the string given as parameter and redirects to the right type
+*/
+
+/*
+** redirects to the right functions
 */
 
 static void	ft_craft1(va_list *argptr, t_list *box)
@@ -25,6 +29,10 @@ static void	ft_craft1(va_list *argptr, t_list *box)
 	else if (box->type == 'd' || box->type == 'i')
 		ft_di_craft(va_arg(*argptr, int), box);
 }
+
+/*
+** redirects to the right functions
+*/
 
 static void	ft_craft2(va_list *argptr, t_list *box)
 {
@@ -40,6 +48,10 @@ static void	ft_craft2(va_list *argptr, t_list *box)
 		ft_percent_craft(box);
 }
 
+/*
+** redirects to the right redirectors
+*/
+
 static void	ft_type_selector(va_list *argptr, t_list *box)
 {
 	if (box->type == 'c' || box->type == 's' || box->type == 'd'
@@ -48,6 +60,10 @@ static void	ft_type_selector(va_list *argptr, t_list *box)
 	else
 		ft_craft2(argptr, box);
 }
+
+/*
+** finds the type whether it's valid or not
+*/
 
 static int	ft_type_finder(int i, char *str, t_list *box)
 {
@@ -63,6 +79,18 @@ static int	ft_type_finder(int i, char *str, t_list *box)
 	else
 		return (0);
 }
+
+/*
+** parses the whole format string in order to find the '%' instructions.
+** if "**" is found, it prints it directly and moves on. this was added
+** due to a bug which was pretty annoying. it's not really elegant as solution,
+** but it works.
+** if a % is found, it's analyzed through ft_analysis, then,
+** the type is found through ft_type_founder. if a type isn't found,
+** the function simply returns to stop. otherwise, the redirector of redirectors
+** function ft_type_selector is called. everything else is pretty straight-
+** forward.
+*/
 
 void		ft_parser(va_list *argptr, char *str, t_list *box)
 {

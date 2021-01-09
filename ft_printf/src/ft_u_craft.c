@@ -6,7 +6,7 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/16 16:43:43 by mdesalle          #+#    #+#             */
-/*   Updated: 2021/01/09 15:30:06 by mdesalle         ###   ########.fr       */
+/*   Updated: 2021/01/09 18:59:54 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,11 @@
 
 /*
 ** prints unsigned ints
+*/
+
+/*
+** prints a decimal unsigned int in base-10
+** according to a set of given possibilities.
 */
 
 static void	ft_print_uint_one(unsigned int nbr, t_list *box)
@@ -34,6 +39,11 @@ static void	ft_print_uint_one(unsigned int nbr, t_list *box)
 	return ;
 }
 
+/*
+** prints a decimal unsigned int in base-10
+** according to a set of given possibilities.
+*/
+
 static void	ft_print_uint_two(unsigned int nbr, t_list *box)
 {
 	if (box->fminus == 1)
@@ -50,6 +60,11 @@ static void	ft_print_uint_two(unsigned int nbr, t_list *box)
 	ft_putnbr_unsigned(nbr, box);
 	return ;
 }
+
+/*
+** prints a decimal unsigned int in base-10
+** according to a set of given possibilities.
+*/
 
 static void	ft_print_uint_three(unsigned int nbr, t_list *box)
 {
@@ -78,6 +93,12 @@ static void	ft_print_uint_three(unsigned int nbr, t_list *box)
 	ft_putnbr_unsigned(nbr, box);
 	return ;
 }
+
+/*
+** redirects to the right functions according to a set of given possibilities.
+** the fspace flag isn't checked here unlike in ft_di_craft as it leads to
+** undefined behaviour in the original printf function
+*/
 
 void		ft_u_craft(unsigned int nbr, t_list *box)
 {

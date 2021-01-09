@@ -6,7 +6,7 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/15 10:34:39 by mdesalle          #+#    #+#             */
-/*   Updated: 2021/01/09 15:25:59 by mdesalle         ###   ########.fr       */
+/*   Updated: 2021/01/09 18:55:01 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,11 @@
 
 /*
 ** prints ints
+*/
+
+/*
+** prints a decimal number in base-10 according
+** to a set of given possibilities
 */
 
 static void	ft_print_int_one(int nbr, t_list *box)
@@ -45,6 +50,11 @@ static void	ft_print_int_one(int nbr, t_list *box)
 	ft_putnbr(nbr, box);
 }
 
+/*
+** prints a decimal number in base-10 according
+** to a set of given possibilities
+*/
+
 static void	ft_print_int_two(int nbr, t_list *box)
 {
 	if (box->fminus == 1)
@@ -62,6 +72,11 @@ static void	ft_print_int_two(int nbr, t_list *box)
 	return ;
 }
 
+/*
+** prints a decimal number in base-10 according
+** to a set of given possibilities
+*/
+
 static void	ft_print_int_three(int nbr, t_list *box)
 {
 	if (!(box->fzero == 1 && box->precision == 0
@@ -73,6 +88,11 @@ static void	ft_print_int_three(int nbr, t_list *box)
 		ft_super_putchar(box->width - ft_intlen(nbr), ' ', box);
 	return ;
 }
+
+/*
+** prints a decimal number in base-10 according
+** to a set of given possibilities
+*/
 
 static void	ft_print_int_four(int nbr, t_list *box)
 {
@@ -98,6 +118,11 @@ static void	ft_print_int_four(int nbr, t_list *box)
 	ft_putnbr(nbr, box);
 	return ;
 }
+
+/*
+** if the fspace flag is equal to one, ' ' is printed. everything else simply
+** redirects to the right functions according to a set of given possibilities
+*/
 
 void		ft_di_craft(int nbr, t_list *box)
 {

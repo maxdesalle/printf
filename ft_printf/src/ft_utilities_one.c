@@ -6,7 +6,7 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/04 16:28:10 by mdesalle          #+#    #+#             */
-/*   Updated: 2021/01/09 15:12:35 by mdesalle         ###   ########.fr       */
+/*   Updated: 2021/01/09 19:05:59 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,19 @@
 ** some basic functions to print and a modified atoi
 */
 
+/*
+** writes one character, and counts through the 'len' linked list flag
+*/
+
 void	ft_putchar(char c, t_list *box)
 {
 	write(1, &c, 1);
 	box->len += 1;
 }
+
+/*
+** writes a string, and counts throught the 'len' linked list flag
+*/
 
 void	ft_putstr(char *str, t_list *box)
 {
@@ -32,6 +40,11 @@ void	ft_putstr(char *str, t_list *box)
 		box->len += 1;
 	}
 }
+
+/*
+** writes a string as long as the given precision, and counts through the
+** 'len' linked list flag
+*/
 
 void	ft_putstr_precision(char *str, t_list *box)
 {
@@ -45,6 +58,11 @@ void	ft_putstr_precision(char *str, t_list *box)
 	}
 }
 
+/*
+** writes as long as the given 'len' (int), and counts through
+** the 'len' linked list flag
+*/
+
 void	ft_super_putchar(int len, char c, t_list *box)
 {
 	while (len-- > 0)
@@ -53,6 +71,10 @@ void	ft_super_putchar(int len, char c, t_list *box)
 		box->len += 1;
 	}
 }
+
+/*
+** modified atoi function which skips '-', '+' and ' '
+*/
 
 long	ft_atoi_alpha(const char *nptr)
 {

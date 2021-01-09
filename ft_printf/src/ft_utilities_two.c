@@ -6,14 +6,19 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/15 11:04:09 by mdesalle          #+#    #+#             */
-/*   Updated: 2021/01/09 15:31:12 by mdesalle         ###   ########.fr       */
+/*   Updated: 2021/01/09 19:03:25 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/printf.h"
 
 /*
-** ft_strlen and its alternatives for ints and unsigned ints, and putnbr
+** ft_strlen and its alternatives for ints and unsigned ints, as well as
+** ft_putnbr and ft_strchr
+*/
+
+/*
+** counts the length of ints
 */
 
 size_t	ft_intlen(long x)
@@ -34,6 +39,10 @@ size_t	ft_intlen(long x)
 		len++;
 	return (len);
 }
+
+/*
+**  prints numbers. doesn't count them as this is done on the ft_putchar side
+*/
 
 void	ft_putnbr(int n, t_list *box)
 {
@@ -62,6 +71,10 @@ void	ft_putnbr(int n, t_list *box)
 		ft_putchar(x + '0', box);
 }
 
+/*
+**  counts the length of the given string
+*/
+
 size_t	ft_strlen(const char *s)
 {
 	int	len;
@@ -71,6 +84,10 @@ size_t	ft_strlen(const char *s)
 		len++;
 	return (len);
 }
+
+/*
+** counts the length of unsigned ints
+*/
 
 size_t	ft_uintlen(unsigned int nbr)
 {
@@ -88,6 +105,10 @@ size_t	ft_uintlen(unsigned int nbr)
 	}
 	return (len);
 }
+
+/*
+** returns a pointer if the given character is found in the string
+*/
 
 char	*ft_strchr(const char *s, int c)
 {

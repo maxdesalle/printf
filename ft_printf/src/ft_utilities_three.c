@@ -6,7 +6,7 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/18 11:34:12 by mdesalle          #+#    #+#             */
-/*   Updated: 2021/01/09 15:19:52 by mdesalle         ###   ########.fr       */
+/*   Updated: 2021/01/09 19:04:26 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,10 @@ void	ft_putnbr_unsigned(unsigned int nbr, t_list *box)
 		ft_putchar(x + '0', box);
 }
 
+/*
+** a ft_strlen for soon-to-be-converted-into-base-16-numbers numbers
+*/
+
 int		ft_baselen(unsigned long x)
 {
 	int y;
@@ -47,6 +51,12 @@ int		ft_baselen(unsigned long x)
 		y++;
 	return (y);
 }
+
+/*
+** a putstr function specifically made for base-16 strings. the difference is
+** the addition of the long x argument, which allows an error check before
+** printing the string
+*/
 
 void	ft_putstr_hexa(char *str, long x, t_list *box)
 {
