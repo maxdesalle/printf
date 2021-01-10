@@ -6,7 +6,7 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/15 11:04:09 by mdesalle          #+#    #+#             */
-/*   Updated: 2021/01/09 19:03:25 by mdesalle         ###   ########.fr       */
+/*   Updated: 2021/01/10 17:54:27 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,18 +44,18 @@ size_t	ft_intlen(long x)
 **  prints numbers. doesn't count them as this is done on the ft_putchar side
 */
 
-void	ft_putnbr(int n, t_list *box)
+void	ft_putnbr(int n, int m, t_list *box)
 {
 	long	x;
 
 	x = n;
-	if (box->fdot == 1 && x == 0 && box->precision == 0 && box->fzero == 1)
+	if (box->fdot == 1 && m == 0 && box->precision == 0 && box->fzero == 1)
 	{
 		if (box->width >= 1)
 			ft_putchar(' ', box);
 		return ;
 	}
-	if (box->fdot == 1 && x == 0 && box->precision == 0 && box->fzero == 0)
+	if (box->fdot == 1 && m == 0 && box->precision == 0 && box->fzero == 0)
 		return ;
 	if (x < 0)
 	{
@@ -64,8 +64,8 @@ void	ft_putnbr(int n, t_list *box)
 	}
 	if (x > 9)
 	{
-		ft_putnbr(x / 10, box);
-		ft_putnbr(x % 10, box);
+		ft_putnbr(x / 10, m, box);
+		ft_putnbr(x % 10, m, box);
 	}
 	else
 		ft_putchar(x + '0', box);

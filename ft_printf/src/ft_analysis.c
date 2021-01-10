@@ -6,7 +6,7 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 08:51:16 by mdesalle          #+#    #+#             */
-/*   Updated: 2021/01/09 19:05:17 by mdesalle         ###   ########.fr       */
+/*   Updated: 2021/01/10 18:19:52 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,8 +94,6 @@ static void	ft_flag(char *str, t_list *box)
 	{
 		if (*str == '-')
 			box->fminus += 1;
-		else if (*str == '+')
-			box->fplus += 1;
 		else if (*str == ' ')
 			box->fspace += 1;
 		else if (*str == '.')
@@ -104,6 +102,10 @@ static void	ft_flag(char *str, t_list *box)
 	}
 	if (box->fminus > 1)
 		box->fminus = 1;
+	else if (box->fdot > 1)
+		box->fdot = 1;
+	else if (box->fspace > 1)
+		box->fspace = 1;
 	if (box->precision < 0)
 	{
 		box->precision = 0;
@@ -124,6 +126,8 @@ static void	ft_fzero(char *str, t_list *box)
 			&& ft_strchr("cspdiuxXnfge%", *str) == NULL)
 		if (*str++ == '0')
 			box->fzero += 1;
+	if (box->fzero > 1)
+		box->fzero = 1;
 	return ;
 }
 
@@ -136,7 +140,6 @@ void		ft_analysis(va_list *argptr, char *str, t_list *box)
 	box->width = 0;
 	box->precision = 0;
 	box->fminus = 0;
-	box->fplus = 0;
 	box->fspace = 0;
 	box->fdot = 0;
 	box->fzero = 0;

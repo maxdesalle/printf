@@ -6,7 +6,7 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 09:02:17 by mdesalle          #+#    #+#             */
-/*   Updated: 2021/01/09 15:38:32 by mdesalle         ###   ########.fr       */
+/*   Updated: 2021/01/10 18:10:16 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ typedef struct	s_list
 	int				fspace;
 	int				width;
 	int				fzero;
-	int				fplus;
 	int				fdot;
 	int				len;
 	char			type;
@@ -102,14 +101,14 @@ void			ft_putstr_precision(char *str, t_list *box);
 size_t			ft_uintlen(unsigned int nbr);
 size_t			ft_intlen(long x);
 size_t			ft_strlen(const char *s);
-void			ft_putnbr(int n, t_list *box);
+void			ft_putnbr(int n, int m, t_list *box);
 char			*ft_strchr(const char *s, int c);
 
 /*
 ** ft_utilities_three.c
 */
 int				ft_baselen(unsigned long x);
-void			ft_putnbr_unsigned(unsigned int nbr, t_list *box);
+void			ft_putnbr_unsigned(unsigned int nbr, unsigned int m, t_list *box);
 void			ft_putstr_hexa(char *str, long x, t_list *box);
 
 #endif
