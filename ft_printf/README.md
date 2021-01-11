@@ -19,13 +19,13 @@ X: uppercase hexadecimal number
 as well as the following flags: ```-0.* +```.
 
 if you want to try it out, simply clone this repository and execute the following commands:
-```console
+```bash
 cd 42/ft_printf/
 ```
-```console
+```bash
 make
 ```
-```console
+```bash
 gcc -Wall -Wextra -Werror src/main.c libftprintf.a -I include && ./a.out
 ```
 
