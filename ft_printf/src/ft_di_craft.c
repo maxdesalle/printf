@@ -6,7 +6,7 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/15 10:34:39 by mdesalle          #+#    #+#             */
-/*   Updated: 2021/01/10 17:56:20 by mdesalle         ###   ########.fr       */
+/*   Updated: 2021/01/11 14:07:27 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,8 +126,6 @@ static void	ft_print_int_four(int nbr, t_list *box)
 
 void		ft_di_craft(int nbr, t_list *box)
 {
-	if (box->fspace == 1)
-		ft_putchar(' ', box);
 	if (box->width >= 1 && box->precision >= 1
 			&& (size_t)box->precision >= ft_intlen(nbr))
 		ft_print_int_one(nbr, box);
