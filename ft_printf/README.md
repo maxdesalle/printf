@@ -34,6 +34,13 @@ I have included a ```main.c``` file in the ```src``` folder where you will be ab
 ## What I have learned
 This project has been tremendously helpful for me as it allowed me to understand the inner workings of linked lists which I didn't understand before this, even if I knew more or less how it worked. Additionally, I discovered the use of variadic arguments through the ```stdarg.h``` library, which I think is incredibly interesting. Finally, it's also worth mentioning that this project pushed me to learn how to efficiently debug code, as well as create one coherent system which works with a lot of independant functions.
 
+## Acknowledgements
+- Emma Bourdit's [ft_printf](https://github.com/emmabrdt/ft_printf)
+- Romain Challie's [ft_printf](https://github.com/rchallie/ft_printf)
+- Jamie Dawson's [ft_printf](https://github.com/JamieDawson/printf)
+- Maia Chardin's [42TESTERS-PRINTF](https://github.com/JamieDawson/printf)
+- Gavin Fielder's [PFT](https://github.com/gavinfielder/pft)
+
 ## Warning
 The structure of this repository does **not** follow the guidelines.
 The reason for this is to add some clarity in how the files are structured.

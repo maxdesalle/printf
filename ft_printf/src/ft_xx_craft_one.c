@@ -6,7 +6,7 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/20 10:02:42 by mdesalle          #+#    #+#             */
-/*   Updated: 2021/01/09 18:40:19 by mdesalle         ###   ########.fr       */
+/*   Updated: 2021/01/11 09:31:37 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ static void	ft_hexa_calculator(int len, long x, char *base, t_list *box)
 			y /= 16;
 			len -= 1;
 		}
-		ft_dispatcher(basechar, y, box);
+		ft_dispatcher(basechar, x, box);
 	}
 }
 

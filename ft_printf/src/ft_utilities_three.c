@@ -6,11 +6,15 @@
 /*   By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/18 11:34:12 by mdesalle          #+#    #+#             */
-/*   Updated: 2021/01/10 17:58:19 by mdesalle         ###   ########.fr       */
+/*   Updated: 2021/01/11 11:09:27 by mdesalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/printf.h"
+
+/*
+** some additional utilities specific to certain use-cases
+*/
 
 /*
 ** a ft_strlen for base numbers and putnbr for unsigned numbers
@@ -58,9 +62,9 @@ int		ft_baselen(unsigned long x)
 ** printing the string
 */
 
-void	ft_putstr_hexa(char *str, long x, t_list *box)
+void	ft_putstr_hexa(char *str, unsigned long long x, t_list *box)
 {
-	if (box->width == 0 && box->fdot == 1 && box->precision == 0 && x == 0)
+	if (box->fdot == 1 && box->precision == 0 && x == 0)
 		return ;
 	while (*str != '\0')
 	{
