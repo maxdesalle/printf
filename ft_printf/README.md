@@ -40,6 +40,7 @@ This project has been tremendously helpful for me as it allowed me to understand
 - Jamie Dawson's [ft_printf](https://github.com/JamieDawson/printf)
 - Maia Chardin's [42TESTERS-PRINTF](https://github.com/JamieDawson/printf)
 - Gavin Fielder's [PFT](https://github.com/gavinfielder/pft)
+- Charles Cabergs's [ft_printf test](https://github.com/cacharle/ft_printf_test)
 
 ## Warning
 The structure of this repository does **not** follow the guidelines.
