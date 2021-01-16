@@ -36,7 +36,7 @@ This project has been tremendously helpful for me as it allowed me to understand
 
 ## Acknowledgements
 - Emma Bourdit's [ft_printf](https://github.com/emmabrdt/ft_printf)
-- Romain Challie's [ft_printf](https://github.com/rchallie/ft_printf)
+- Romain Challier's [ft_printf](https://github.com/rchallie/ft_printf)
 - Jamie Dawson's [ft_printf](https://github.com/JamieDawson/printf)
 - Maia Chardin's [42TESTERS-PRINTF](https://github.com/JamieDawson/printf)
 - Gavin Fielder's [PFT](https://github.com/gavinfielder/pft)
