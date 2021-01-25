@@ -6,7 +6,7 @@
 #    By: mdesalle <mdesalle@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/04 16:09:49 by mdesalle          #+#    #+#              #
-#    Updated: 2021/01/06 15:47:29 by mdesalle         ###   ########.fr        #
+#    Updated: 2021/01/25 11:51:36 by mdesalle         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,6 +31,8 @@ SRC = src/ft_c_craft.c \
       src/ft_percent_craft.c \
       src/ft_s_craft.c
 
+ccgreen = "\033[0;92m"
+
 OBJ = $(SRC:.c=.o)
 
 %.o: %.c
@@ -40,11 +42,22 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	ar rcs $(NAME) $(OBJ)
+	@printf $(ccgreen)
+	@echo "Library successfully compiled"
 
 clean:
 	rm -rf $(OBJ)
+	@printf $(ccgreen)
+	@echo "Library successfully cleaned"
 	
-fclean: clean
+fclean:
+	rm -rf $(OBJ)
+	rm -rf $(NAME)
+	@printf $(ccgreen)
+	@echo "Library successfully cleaned, including the libftprintf.a file"
+
+fcleanre:
+	rm -rf $(OBJ)
 	rm -rf $(NAME)
 
-re: fclean all
+re: fcleanre all
