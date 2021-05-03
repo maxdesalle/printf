@@ -31,7 +31,7 @@ gcc -Wall -Wextra -Werror src/main.c libftprintf.a -I include && ./a.out
 
 I have included a ```main.c``` file in the ```src``` folder where you will be able to try it out the ```ft_printf``` function. Have fun!
 
-## What I have learned
+## What I learned
 This project has been tremendously helpful for me as it allowed me to understand the inner workings of linked lists which I didn't understand before this, even if I knew more or less how it worked. Additionally, I discovered the use of variadic arguments through the ```stdarg.h``` library, which I think is incredibly interesting. Finally, it's also worth mentioning that this project pushed me to learn how to efficiently debug code, as well as create one coherent system which works with a lot of independant functions.
 
 ## Acknowledgements
