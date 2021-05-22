@@ -43,7 +43,7 @@ This project has been tremendously helpful for me as it allowed me to understand
 - Charles Cabergs's [ft_printf test](https://github.com/cacharle/ft_printf_test)
 
 ## Warning
-The structure of this repository does **not** follow the guidelines.
+The structure of this repository does **not** necessarily follow the guidelines.
 The reason for this is to add some clarity in how the files are structured.
 
 ## License
